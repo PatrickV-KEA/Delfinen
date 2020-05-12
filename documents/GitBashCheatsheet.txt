@@ -5,7 +5,7 @@ tutorials:
 clone repository: (Do only once when setting up)
 	git clone https://github.com/PatrickV-KEA/Delfinen.git
 
-get changes in remote repo: (or use pull, it uses fetch+merge)
+get changes in remote repo: (or use "git pull", it uses fetch+merge)
 	git fetch
 	git merge
 
