@@ -1,0 +1,22 @@
+clone repository: (Do only once when setting up)
+	git clone https://github.com/PatrickV-KEA/Delfinen.git
+
+get changes in remote repo:
+	git fetch
+	git merge
+
+check your local changes:
+	git status
+
+ad local changes:
+	git add .
+
+commit changes:
+	git commit
+
+check all commits:
+	git log
+
+
+hvad betyder "git pull"??
+
