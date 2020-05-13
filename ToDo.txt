@@ -1,0 +1,38 @@
+For at holde overblik over projektet, så har jeg (akm) lavet en toDo liste.
+listen er opdelt i fælles og unassigned opgaver, 
+ting hvor vi skal have afklaring (både internt og fra underviseren).
+samt hvilke opgaver der ligger hos os hver i sær.
+Så vi kan fordele opgaverne til dem der har bedst tid :D
+Når der står navn i parantes så er det fordi det kræver forklaring.
+
+
+Ting der skal gøres:
+-resten
+-kassere kan indskrive en betaling i systemet. Det skal på usecase'en.
+-fixe UI, så der ikke behøver at stå "UI ui = new UI" i alle klasser.
+-lave en programmetode{	
+	-lave bootUp metode
+	-lave et run loop}
+
+
+Ting der mangler afklareing (diskution):
+-skal alle medlemmer gemmes i en arraylist?
+-medlems constructor
+-samt noget med rettelser til medlemmer (AKM).
+-Vi skal overveje hvor meget af funktionaliteten der skal lægges direkte i MenuController.
+
+
+Ting vi skal have afklaring fra undervisere til:
+
+
+Patrick's toDo liste:
+
+
+Kapser's toDo liste:
+
+
+Adam's (akm) toDo liste:
+-menu'erne. 
+
+
+Nice2Have funktioner... (kan være ud over opgaven)

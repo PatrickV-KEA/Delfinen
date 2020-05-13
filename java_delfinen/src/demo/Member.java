@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Member {
 
+    private int menberNr;
     private String name;
     private Date birthday;
     private int cpr;
