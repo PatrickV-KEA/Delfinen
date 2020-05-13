@@ -5,12 +5,14 @@ public class MenuController {
     // FIELDS
     // ------------------------------------------------------
     UI ui = new UI;
+
     // ------------------------------------------------------
     // CONSTRUCTOR
     // ------------------------------------------------------
     public MenuController(PizzaList pizzaList, OrdersList ordersList, UI ui) {
 
     }
+
     // ------------------------------------------------------
     // METHODS
     // ------------------------------------------------------
@@ -25,34 +27,17 @@ public class MenuController {
         try {
             switch (ui.scannerInt()) {
                 case 1:
-                    //print aktive bestillinger
-
+                    //træner menu
+                    CoachMenu.menu();//noget med static
                     break;
                 case 2:
-                    //tilføj bestilling
-
+                    //kasser menu
+                    EconomicsMenu.menu();//noget med static
                     break;
                 case 3:
-                    //færdiggør bestilling
-
+                    //formands menu
+                    BoardMenu.menu();//noget med static
                     break;
-                /*case 4:
-                    //annuller bestilling
-                    ui.clear();
-                    ui.printArraylist(ordersList.getSortedOrders());
-                    ui.printString("Annuller ordre. \nIndtast ordre nummer:");
-                    menuOrders.removeOrder(ui.scannerInt(), false);
-                    break;
-                case 5:
-                    //se menukort
-                    ui.clear();
-                    ui.printArraylist(pizzaList.getMenu());
-                    break;
-                case 6:
-                    //se statestik
-                    ui.clear();
-                    ui.printArraylist(fileHandler.getStatistics());
-                    break;*/
                 default:
                     throw new IllegalArgumentException();
             }
