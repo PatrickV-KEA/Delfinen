@@ -1,5 +1,7 @@
 package demo;
 
+import java.time.LocalDate;
+
 public class EconomicsMenu {
 
     UI ui = new UI;
