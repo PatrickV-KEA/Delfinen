@@ -22,17 +22,18 @@ public class Member {
     private String      discipline;
     private float       bestTime;
     private boolean     active;
-    private ArrayList<Tournament>   tournament;
+    private ArrayList<Tournament> tournament = new ArrayList<>();
 
     // -------------------------------------------------------------------------------------------------
     // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
     public Member( String name, LocalDate birthday, int cpr, boolean payed, boolean active) {
-        this.name =     name;
+        this.name = name;
         this.birthday = birthday;
-        this.cpr =      cpr;
-        this.payed =    payed;
-        this.active =   active;
+        this.cpr = cpr;
+        this.payed = payed;
+        this.active = active;
+    }
 
     public Member(int memberNr, String name, LocalDate birthday, int cpr, boolean payed, boolean active) {
         this.memberNr = memberNr;
@@ -43,16 +44,15 @@ public class Member {
         this.active =   active;
     }
 
-    public Member(int memberNr, String name, LocalDate birthday, int cpr, boolean payed, String discipline, float bestTime, boolean active, ArrayList<Tournament> tournament) {
+    public Member(int memberNr, String name, LocalDate birthday, int cpr, boolean payed, boolean active, String discipline, float bestTime) {
         this.memberNr =     memberNr;
         this.name =         name;
         this.birthday =     birthday;
         this.cpr =          cpr;
         this.payed =        payed;
+        this.active =       active;
         this.discipline =   discipline;
         this.bestTime =     bestTime;
-        this.active =       active;
-        this.tournament =   tournament;
     }
 
     // -------------------------------------------------------------------------------------------------
