@@ -16,7 +16,7 @@ public class Members {
     public Member getMemberFromNumber(int number) {
         Member member;
         for (int i = 0; i < members.size(); i++) {
-            int id = members.get(i).getMembernr;
+            int id = members.get(i).getMemberNr();
             if (id == number) {
                 member = members.get(i);
                 return member;

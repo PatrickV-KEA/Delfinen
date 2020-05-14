@@ -1,8 +1,6 @@
 /**
-*
-* @author Adam Kasper Patrick
-*
-*/
+ * @author Adam Kasper Patrick
+ */
 
 package demo;
 
@@ -14,60 +12,62 @@ public class Member {
     // -------------------------------------------------------------------------------------------------
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    private int         memberNr;
-    private String      name;
-    private LocalDate   birthday;
-    private int         cpr;
-    private boolean     payed;
-    private String      discipline;
-    private float       bestTime;
-    private boolean     active;
-    private ArrayList<Tournament>   tournament;
+    private int memberNr;
+    private String name;
+    private LocalDate birthday;
+    private int cpr;
+    private boolean payed;
+    private String discipline;
+    private float bestTime;
+    private boolean active;
+    private ArrayList<Tournament> tournament;
 
     // -------------------------------------------------------------------------------------------------
     // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    public Member( String name, LocalDate birthday, int cpr, boolean payed, boolean active) {
-        this.name =     name;
+    public Member(String name, LocalDate birthday, int cpr, boolean payed, boolean active) {
+        this.name = name;
         this.birthday = birthday;
-        this.cpr =      cpr;
-        this.payed =    payed;
-        this.active =   active;
-
-    public Member(int memberNr, String name, LocalDate birthday, int cpr, boolean payed, boolean active) {
-        this.memberNr = memberNr;
-        this.name =     name;
-        this.birthday = birthday;
-        this.cpr =      cpr;
-        this.payed =    payed;
-        this.active =   active;
+        this.cpr = cpr;
+        this.payed = payed;
+        this.active = active;
     }
-
-    public Member(int memberNr, String name, LocalDate birthday, int cpr, boolean payed, String discipline, float bestTime, boolean active, ArrayList<Tournament> tournament) {
-        this.memberNr =     memberNr;
-        this.name =         name;
-        this.birthday =     birthday;
-        this.cpr =          cpr;
-        this.payed =        payed;
-        this.discipline =   discipline;
-        this.bestTime =     bestTime;
-        this.active =       active;
-        this.tournament =   tournament;
-    }
-
-    // -------------------------------------------------------------------------------------------------
-    // BEHAVIOR METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    // -------------------------------------------------------------------------------------------------
-    public Tournament addTournament(String name, int result, float newTime, LocalDate date) {
-        if (newTime < bestTime) {
-            bestTime = newTime;
+    public Member( int memberNr, String name, LocalDate birthday,int cpr, boolean payed, boolean active){
+            this.memberNr = memberNr;
+            this.name = name;
+            this.birthday = birthday;
+            this.cpr = cpr;
+            this.payed = payed;
+            this.active = active;
         }
-        return new Tournament(name, result, newTime, date);
-    }
+
+    public Member( int memberNr, String name, LocalDate birthday,int cpr, boolean payed, String discipline,
+        float bestTime, boolean active, ArrayList<Tournament > tournament){
+            this.memberNr = memberNr;
+            this.name = name;
+            this.birthday = birthday;
+            this.cpr = cpr;
+            this.payed = payed;
+            this.discipline = discipline;
+            this.bestTime = bestTime;
+            this.active = active;
+            this.tournament = tournament;
+        }
+
+        // -------------------------------------------------------------------------------------------------
+        // BEHAVIOR METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // -------------------------------------------------------------------------------------------------
+        public Tournament addTournament (String name,int result, float newTime, LocalDate date) {
+            if (newTime < bestTime) {
+                bestTime = newTime;
+            }
+
+            return new Tournament(name, result, newTime, date);
+        }
 
     public void addToTeam(String discipline, float bestTime) {
-        this.discipline =   discipline;
-        this.bestTime =     bestTime;
+        this.discipline = discipline;
+        this.bestTime = bestTime;
     }
 
     // -------------------------------------------------------------------------------------------------
