@@ -2,7 +2,7 @@ package demo;
 
 public class CoachMenu {
 
-    UI ui = new UI;
+    UI ui = new UI();
 
     public void menu() {
         //DENNE MENU ER SLET IKKE KLAR ENDNU!
@@ -35,3 +35,4 @@ public class CoachMenu {
 
         }
     }
+}
