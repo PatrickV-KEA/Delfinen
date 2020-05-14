@@ -14,9 +14,6 @@ public class CoachMenu {
         ui.printString("Tryk 1 For træner");
         ui.printString("Tryk 2 For kasseren");
         ui.printString("Tryk 3 For formanden");
-        //ui.printString("Tryk 4 Annuller bestilling");
-        //ui.printString("Tryk 5 Se menukort");
-        //ui.printString("Tryk 6 Se statistik");
         ui.print(">>");
         try {
             switch (ui.scannerInt()) {

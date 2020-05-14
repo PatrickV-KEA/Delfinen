@@ -9,14 +9,11 @@ Når der står navn i parantes så er det fordi det kræver forklaring.
 Ting der skal gøres:
 -kassere kan indskrive en betaling i systemet. Det skal på usecase'en.
 -fixe UI, så der ikke behøver at stå "UI ui = new UI" i alle klasser.
--lave en programmetode{	
-	-lave bootUp metode
-	-lave et run loop}
+-rette navne til i UI klassen. Så det giver bedre mening...
 
 
 Ting der mangler afklareing (diskution):
--skal alle medlemmer gemmes i en arraylist?
--medlems constructor
+-skal alle medlemmer gemmes i en arraylist? ( tror svaret er ja?.)
 -samt noget med rettelser til medlemmer (AKM).
 -Vi skal overveje hvor meget af funktionaliteten der skal lægges direkte i MenuController.
 
@@ -32,7 +29,7 @@ Kapser's toDo liste:
 
 Adam's (akm) toDo liste:
 -menu'erne. 
--indmeldings funktion. *skal bare testes
+-indmeldings funktion. *skal bare testes (ser ud til at virke...) 
 
 
 Nice2Have funktioner... (kan være ud over opgaven)

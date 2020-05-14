@@ -5,10 +5,9 @@ public class Program {
     // ------------------------------------------------------
     // FIELDS
     // ------------------------------------------------------
-    //private PizzaList pizzaList = new PizzaList();
-    //private OrdersList ordersList = new OrdersList();
     private UI ui = new UI();
     private MenuController menuController = new MenuController();
+
     // ------------------------------------------------------
     // CONSTRUCTOR
     // ------------------------------------------------------

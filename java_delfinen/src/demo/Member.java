@@ -1,8 +1,8 @@
 /**
-*
-* @author Adam Kasper Patrick
-*
-*/
+ *
+ * @author Adam Kasper Patrick
+ *
+ */
 
 package demo;
 
