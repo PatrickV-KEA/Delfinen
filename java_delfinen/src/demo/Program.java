@@ -4,15 +4,15 @@ public class Program {
     // ------------------------------------------------------
     // FIELDS
     // ------------------------------------------------------
-    private PizzaList pizzaList = new PizzaList();
-    private OrdersList ordersList = new OrdersList();
+    //private PizzaList pizzaList = new PizzaList();
+    //private OrdersList ordersList = new OrdersList();
     private UI ui = new UI();
-    private MenuController menuController = new MenuController(pizzaList, ordersList, ui);
+    private MenuController menuController = new MenuController();
     // ------------------------------------------------------
     // CONSTRUCTOR
     // ------------------------------------------------------
     public Program() {
-        new GenerateFromFile(pizzaList, ordersList);
+      //  new GenerateFromFile(pizzaList, ordersList);
         run();
     }
     // ------------------------------------------------------
