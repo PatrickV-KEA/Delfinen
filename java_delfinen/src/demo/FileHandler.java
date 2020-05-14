@@ -1,24 +1,63 @@
+/**
+ *
+ *
+ * @author Patrick
+ *
+ */
+
 package demo;
 
 import java.io.*;
 import java.util.ArrayList;
 
 public class FileHandler {
-    // ------------------------------------------------------
-    // FIELDS
-    // ------------------------------------------------------
-    private OrdersList ordersList;
-    private PizzaList pizzaList;
-    // ------------------------------------------------------
-    // CONSTRUCTOR
-    // ------------------------------------------------------
-    public FileHandler(OrdersList ordersList, PizzaList pizzaList) {
-        this.ordersList = ordersList;
-        this.pizzaList = pizzaList;
+
+    // -------------------------------------------------------------------------------------------------
+    // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // -------------------------------------------------------------------------------------------------
+    private UI ui =     new UI();
+    private File file = new File("Svømmeklub.txt");
+
+    // -------------------------------------------------------------------------------------------------
+    // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // -------------------------------------------------------------------------------------------------
+    public FileHandler() {}
+
+    // -------------------------------------------------------------------------------------------------
+    // BEHAVIOR METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // -------------------------------------------------------------------------------------------------
+    public ArrayList<Member> getMembersList() {
+        ArrayList<Member> memberArrayList = new ArrayList<>();
+
+        try {
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+            StringBuffer sb = new StringBuffer();
+
+            String line;
+            while ((line=br.readLine())!=null) {
+
+                if (!line.isEmpty()) {
+                    // membernr, name, birthday, cpr, payed, discipline, bestTime, active, tournament
+                    int memberNr = Character.getNumericValue((char) line.charAt(0));
+                    
+
+                    if (thisInt != order.getOrderNumber()) {
+                        sb.append(line + "\n");
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return memberArrayList;
     }
-    // ------------------------------------------------------
-    // BEHAVIOR::METHODS
-    // ------------------------------------------------------
+
+    public Member addMember() {
+
+    }
+
     public void writeOrder(Order order) {
         try {
             File file = new File("activeOrders.txt");

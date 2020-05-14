@@ -1,4 +1,4 @@
-Adam 14/03/1996-8755 betalt2018 betalt2019 rygkrawl betalt2020 00:01:30 aktiv
-Kasper 23/05/1997-8723 betalt2020 krawl 00:01:29 aktiv
-Patrick 21/07/1992-8989 passiv
-Bolette 01/08/2008-8924 betalt2020 betalt2019 juniorbutterfly 00:01:59 aktiv
+1 Adam 1996/03/14 8755 Betalt Rygkrawl 90 Aktiv
+2 Kasper 1997/05/23 8723 Betalt Krawl 99 Aktiv ¤ "Kolding water rave" 3 96 2020/04/02
+3 Patrick 1992/07/21 8989 IkkeBetalt Passiv
+4 Bolette 2008/08/01 8924 Betalt Butterfly 119 Aktiv
