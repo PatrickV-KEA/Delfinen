@@ -48,7 +48,7 @@ public class FileHandler {
 
                     int id = Character.getNumericValue(lineMember[0].split("=")[1].charAt(0));
                     String name = lineMember[1].split("=")[1];
-                    LocalDate date = LocalDate.parse(lineDate, DateTimeFormatter.ofPattern("DD/MM/YYYY"));
+                    LocalDate date = LocalDate.parse(lineDate, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
                     int cpr = Integer.parseInt(lineMember[3].split("=")[1]);
                     boolean payed = Boolean.parseBoolean(lineMember[4].split("=")[1]);
                     boolean active = Boolean.parseBoolean(lineMember[5].split("=")[1]);
@@ -57,22 +57,36 @@ public class FileHandler {
                     Member member;
                     if (lineArr.length > 1) {
                         String[] lineContents = lineArr[1].split(" ");
-                        String discipline = lineContents[0].split("=")[1];
-                        float time = Float.parseFloat(lineContents[1].split("=")[1]);
-                        member = new Member(id, name, date, cpr, payed, active, discipline, time);
+                        if (lineContents[0].equals("")) {
+                            String discipline = lineContents[1].split("=")[1];
+                            float time = Float.parseFloat(lineContents[2].split("=")[1]);
+                            member = new Member(id, name, date, cpr, payed, active, discipline, time);
+                        } else {
+                            String discipline = lineContents[0].split("=")[1];
+                            float time = Float.parseFloat(lineContents[1].split("=")[1]);
+                            member = new Member(id, name, date, cpr, payed, active, discipline, time);
+                        }
                     } else {
                         member = new Member(id, name, date, cpr, payed, active);
                     }
 
                     //ADD TOURNAMENTS
                     if (lineArr.length > 2) {
-                        for (int i = 2; i < lineArr.length+1; i++) {
+                        for (int i = 2; i < lineArr.length; i++) {
                             String[] lineContents = lineArr[i].split(" ");
-                            String tName = lineContents[0].split("=")[1];
-                            int tResult = Integer.parseInt(lineContents[1].split("=")[1]);
-                            float tTime = Float.parseFloat(lineContents[2].split("=")[1]);
-                            LocalDate tDate = LocalDate.parse(lineContents[3].split("=")[1], DateTimeFormatter.ofPattern("DD/MM/YYYY"));
-                            member.addTournament(tName, tResult, tTime, tDate);
+                            if (lineContents[0].equals("")) {
+                                String tName = lineContents[1].split("=")[1];
+                                int tResult = Integer.parseInt(lineContents[2].split("=")[1]);
+                                float tTime = Float.parseFloat(lineContents[3].split("=")[1]);
+                                LocalDate tDate = LocalDate.parse(lineContents[4].split("=")[1], DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                                member.addTournament(tName, tResult, tTime, tDate);
+                            } else {
+                                String tName = lineContents[0].split("=")[1];
+                                int tResult = Integer.parseInt(lineContents[1].split("=")[1]);
+                                float tTime = Float.parseFloat(lineContents[2].split("=")[1]);
+                                LocalDate tDate = LocalDate.parse(lineContents[3].split("=")[1], DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                                member.addTournament(tName, tResult, tTime, tDate);
+                            }
                         } // END OF LOOP
                     }
 
