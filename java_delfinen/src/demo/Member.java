@@ -10,15 +10,15 @@ public class Member {
     private int cpr;
     private boolean payed;
     //konkurrence - disiplin - tid
-    private boolean activ;
+    private boolean active;
     //stævne - placering - tid
 
 
-    public Member(String name, Date birthday, int cpr, boolean payed, boolean activ) {
+    public Member(String name, Date birthday, int cpr, boolean payed, boolean active) {
         this.name = name;
         this.birthday = birthday;
         this.cpr = cpr;
         this.payed = payed;
-        this.activ = activ;
+        this.active = active;
     }
 }

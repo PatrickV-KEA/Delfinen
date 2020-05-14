@@ -14,15 +14,15 @@ UI ui = new UI;
             switch (ui.scannerInt()) {
                 case 1:
                     //træner menu
-                    CoachMenu.menu();//noget med static
+
                     break;
                 case 2:
                     //kasser menu
-                    EconomicsMenu.menu();//noget med static
+
                     break;
                 case 3:
                     //formands menu
-                    BoardMenu.menu();//noget med static
+
                     break;
                 default:
                     throw new IllegalArgumentException();
