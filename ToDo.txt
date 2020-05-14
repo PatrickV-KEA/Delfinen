@@ -32,7 +32,7 @@ Kapser's toDo liste:
 
 Adam's (akm) toDo liste:
 -menu'erne. 
--indmeldings funktion.
+-indmeldings funktion. *skal bare testes
 
 
 Nice2Have funktioner... (kan være ud over opgaven)
