@@ -7,7 +7,6 @@ Når der står navn i parantes så er det fordi det kræver forklaring.
 
 
 Ting der skal gøres:
--resten
 -kassere kan indskrive en betaling i systemet. Det skal på usecase'en.
 -fixe UI, så der ikke behøver at stå "UI ui = new UI" i alle klasser.
 -lave en programmetode{	
@@ -26,13 +25,14 @@ Ting vi skal have afklaring fra undervisere til:
 
 
 Patrick's toDo liste:
-
+-fileHandler
 
 Kapser's toDo liste:
-
+-sorting af medlemmer til MembersType
 
 Adam's (akm) toDo liste:
 -menu'erne. 
+-indmeldings funktion.
 
 
 Nice2Have funktioner... (kan være ud over opgaven)
