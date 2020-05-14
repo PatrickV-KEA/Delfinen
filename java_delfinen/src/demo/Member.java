@@ -22,7 +22,7 @@ public class Member {
     private String      discipline;
     private float       bestTime;
     private boolean     active;
-    private ArrayList<Tournament> tournament = new ArrayList<>();
+    private ArrayList<Tournament> tournaments = new ArrayList<>();
 
     // -------------------------------------------------------------------------------------------------
     // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -58,11 +58,11 @@ public class Member {
     // -------------------------------------------------------------------------------------------------
     // BEHAVIOR METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    public Tournament addTournament(String name, int result, float newTime, LocalDate date) {
+    public void addTournament(String name, int result, float newTime, LocalDate date) {
         if (newTime < bestTime) {
             bestTime = newTime;
         }
-        return new Tournament(name, result, newTime, date);
+         tournaments.add(new Tournament(name, result, newTime, date));
     }
 
     public void addToTeam(String discipline, float bestTime) {
@@ -138,10 +138,10 @@ public class Member {
     }
 
     public ArrayList<Tournament> getTournaments() {
-        return tournament;
+        return tournaments;
     }
 
-    public void setTournaments(ArrayList<Tournament> tournament) {
-        this.tournament = tournament;
+    public void setTournaments(ArrayList<Tournament> tournaments) {
+        this.tournaments = tournaments;
     }
 }
