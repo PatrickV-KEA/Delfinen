@@ -6,7 +6,7 @@ import java.io.StringReader;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+/*
 public class GenerateFromFile {
     // ------------------------------------------------------
     // FIELDS
@@ -88,4 +88,4 @@ public class GenerateFromFile {
         scan.close();
         return LocalTime.of(HH, MM);
     }
-}
+}*/

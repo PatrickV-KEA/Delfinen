@@ -37,7 +37,7 @@ public class MenuController {
                     break;
                 case 3:
                     //formands menu
-                    boardMenu.menu();//noget med static
+                    boardMenu.menu();
                     break;
                 default:
                     throw new IllegalArgumentException();

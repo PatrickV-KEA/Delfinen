@@ -27,6 +27,13 @@ public class Member {
     // -------------------------------------------------------------------------------------------------
     // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
+    public Member( String name, LocalDate birthday, int cpr, boolean payed, boolean active) {
+        this.name =     name;
+        this.birthday = birthday;
+        this.cpr =      cpr;
+        this.payed =    payed;
+        this.active =   active;
+
     public Member(int memberNr, String name, LocalDate birthday, int cpr, boolean payed, boolean active) {
         this.memberNr = memberNr;
         this.name =     name;
