@@ -10,7 +10,7 @@ public class EconomicsMenu {
         ui.printString("Tryk 1 For restance listen");
         ui.printString("Tryk 2 For medlemslisten");
         ui.printString("Tryk 3 For Opdatere et medlems informationer");
-        ui.printString("tryk 4 for at indskrive en betaling");
+        ui.printString("tryk 4 for at indskrive en betaling   ");
         ui.printString("Tryk 5 for årest samlede kontingent");
         ui.print(">>");
         try {
