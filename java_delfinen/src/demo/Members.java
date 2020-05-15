@@ -29,7 +29,7 @@ public class Members {
         }
         return null;
     }
-
+/*
     public void SortMembers() {
         for (int i = 0; i < members.size(); i++) {
             if (members.get(i).getAge() < 18){
@@ -42,7 +42,7 @@ public class Members {
                 addElder(members.get(i));
             }
         }
-    }
+    }*/
 }
 
 
