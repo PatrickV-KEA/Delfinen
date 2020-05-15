@@ -65,7 +65,10 @@ public class Economics {
 
     }
 
-    public void changePaymentStatus(){}
+    public void changePaymentStatus(){
+        //Filewriter
+
+    }
 
 
 }
