@@ -72,6 +72,19 @@ public class Member {
         this.bestTime =     bestTime;
     }
 
+    @Override
+    public String toString() {
+        return memberNr +
+                "." + name +
+                " " + birthday +
+                "-" + cpr +
+                " Betaling: " + payed +
+                " Medlemsstatus" + active +
+                " Disciplin: " + discipline +
+                " Bedste Tid: " + bestTime +
+                ". Stævne: " + tournaments;
+    }
+
     // -------------------------------------------------------------------------------------------------
     // BEHAVIOR ACCESSORS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------

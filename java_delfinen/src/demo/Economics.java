@@ -60,6 +60,7 @@ public class Economics {
                     contingent = 1200;
                 }
             }
+
             ui.printString("" + memberList.get(i) + " " + contingent + " kr. kontingent.");
         }
 
