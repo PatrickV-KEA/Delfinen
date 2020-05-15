@@ -75,11 +75,11 @@ public class Member {
     @Override
     public String toString() {
         return memberNr +
-                "." + name +
+                ". " + name +
                 " " + birthday +
                 "-" + cpr +
                 " Betaling: " + payed +
-                " Medlemsstatus" + active +
+                " Aktivt medlem: " + active +
                 " Disciplin: " + discipline +
                 " Bedste Tid: " + bestTime +
                 ". Stævne: " + tournaments;

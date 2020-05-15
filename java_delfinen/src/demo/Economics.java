@@ -9,7 +9,6 @@ public class Economics {
     ArrayList<Member> memberList = fileHandler.getMembersList();
 
     public void printMemberArrears() {
-
         Member member;
         ArrayList<Member> arrearsList = new ArrayList<>();
 
@@ -22,7 +21,7 @@ public class Economics {
         ui.printArraylist(arrearsList);
     }
 
-    public int getTotalContingent() {
+    public void getTotalContingent() {
         int total = 0;
 
         for (int i = 0; i < memberList.size(); i++) {
@@ -40,7 +39,7 @@ public class Economics {
                 }
             }
         }
-        return total;
+        ui.printString("Total Kontingent: " + total + " kr.");
     }
 
     public void printMemberList(){
