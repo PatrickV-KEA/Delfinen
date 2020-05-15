@@ -1,7 +1,7 @@
 package demo;
 /**
  *
- * @author Adam
+ * @author Adam kasper
  *
  */
 

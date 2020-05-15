@@ -8,6 +8,7 @@ package demo;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Member {
 
@@ -95,6 +96,13 @@ public class Member {
 
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
+    }
+
+    public int getAge (){
+        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+        int birthYear = birthday.getYear();
+        int age = currentYear - birthYear;
+        return age;
     }
 
     public int getCpr() {
