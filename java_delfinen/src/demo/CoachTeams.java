@@ -1,5 +1,9 @@
 package demo;
-
+/**
+ *
+ * @author kasper
+ *
+ */
 import java.util.ArrayList;
 
 public class CoachTeams {
@@ -9,7 +13,39 @@ public class CoachTeams {
     ArrayList<Member> memberList = fileHandler.getMembersList();
 
 
-        private Member chooseMember(ArrayList<Member> memberList) {
+    public void assignSwimmer() {
+        Boolean condition = true;
+        while (condition) {
+            ui.clear();
+            ui.printString("\nVælg Disciplin:");
+            ui.printString("    1-[Butterfly]\n    2-[Crawl]\n    3-[Rygcrawl]\n    4-[brystsvømning]\n    0-[annuller]");
+            ui.print(">>");
+
+            switch (ui.scannerInt()) {
+                case 0:
+                    condition = false;
+                    break;
+                case 1:
+
+                    break;
+                case 2:
+
+                    condition = false;
+                    break;
+                case 3:
+
+                    condition = false;
+                    break;
+                case 4:
+
+                    condition = false;
+                    break;
+            }
+
+        }
+    }
+
+    private Member chooseMember(ArrayList<Member> memberList) {
             Member member;
             try {
         while (true) {
@@ -34,4 +70,6 @@ public class CoachTeams {
     }
         return null;
 }
+
+
 }

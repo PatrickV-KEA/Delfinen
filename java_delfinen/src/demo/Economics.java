@@ -1,5 +1,9 @@
 package demo;
-
+/**
+ *
+ * @author kasper
+ *
+ */
 import java.util.ArrayList;
 
 public class Economics {
