@@ -1,5 +1,4 @@
 /**
- *
  * @author Patrick
  */
 
@@ -26,6 +25,51 @@ public class FileHandler {
     // -------------------------------------------------------------------------------------------------
     // BEHAVIOR METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
+    /*public ArrayList<Member> getMemberList_new() {
+        ArrayList<Member> memberArrayList = new ArrayList<>();
+        Hashtable<String, String> fileMap = new Hashtable<String, String>(50);
+
+        try {
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+
+            String line;
+            //READ A LINE FOR EVERY LOOP
+            while ((line = br.readLine()) != null) {
+
+                if (!line.isEmpty()) {
+
+                    Member member = new Member("", LocalDate.of(0000,00,00),0000,false,false);
+
+                    String[] lineArr = line.split("¤");
+                    for (int i = 0; i < lineArr.length; i++) {
+
+                        String[] partArr = line.split(" ");
+                        for (int j = 0; j < partArr.length; j++) {
+
+                            try {
+                                String[] varArr = line.split("=");
+                                fileMap.put( varArr[0], varArr[1] );
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        } // END OF FOR-LOOP
+                    } // END OF FOR-LOOP (READING LINE)
+
+                    for (int i = 0; i < fileMap.size(); i++) {
+
+                        Hashtable attrMap = member.getAttrMap();
+                        attrMap.get("id") = 1;
+
+                    } // END OF FOR-LOOP ()
+                }
+            } // END OF WHILE-LOOP
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new ArrayList<Member>();
+    }*/
     public ArrayList<Member> getMembersList() {
 
         ArrayList<Member> memberArrayList = new ArrayList<>();
@@ -100,7 +144,6 @@ public class FileHandler {
 
         return memberArrayList;
     }
-
     /*
     public void writeOrder(Order order) {
         try {
