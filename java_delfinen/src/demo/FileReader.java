@@ -17,11 +17,6 @@ public class FileReader {
     private SmartInputter smartInputter = new SmartInputter();
 
     // -------------------------------------------------------------------------------------------------
-    // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    // -------------------------------------------------------------------------------------------------
-    public FileReader() {}
-
-    // -------------------------------------------------------------------------------------------------
     // BEHAVIOR METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
     public ArrayList<Member> getMembersList() {
@@ -32,7 +27,6 @@ public class FileReader {
             java.io.FileReader fr = new java.io.FileReader(file);
             BufferedReader br = new BufferedReader(fr);
 
-            //READ A LINE FOR EVERY LOOP
             String line;
             while ((line = br.readLine()) != null) {
 
@@ -136,23 +130,5 @@ public class FileReader {
             e.printStackTrace();
         }
     }
-
-    public ArrayList<String> getStatistics() {
-        ArrayList<String> strArr = new ArrayList<>();
-        try {
-            File file = new File("finishedOrders.txt");
-            FileReader fr = new FileReader(file);
-            BufferedReader br = new BufferedReader(fr);
-
-            while (br.readLine() != null) {
-                strArr.add(br.readLine());
-            }
-            return strArr;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return strArr;
-        }
-    }
-
      */
 }

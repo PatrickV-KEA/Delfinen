@@ -1,8 +1,6 @@
 package demo;
 /**
- *
  * @author Adam kasper
- *
  */
 
 import java.util.ArrayList;
