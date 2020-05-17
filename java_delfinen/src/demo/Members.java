@@ -8,22 +8,16 @@ package demo;
 import java.util.ArrayList;
 
 public class Members {
-    ArrayList<Member> members = new ArrayList<>();
-    ArrayList<Member> juniorList = new ArrayList<>();
-    ArrayList<Member> seniorList = new ArrayList<>();
-    ArrayList<Member> elderList = new ArrayList<>();
 
-    public void addMember (Member member) { members.add(member); }
-    public void addJunior (Member member) { juniorList.add(member); }
-    public void addSenior (Member member) { seniorList.add(member); }
-    public void addElder (Member member) { elderList.add(member); }
+    private FileReader fileReader = new FileReader();
+    ArrayList<Member> membersList = fileReader.getMembersList();
 
     public Member getMemberFromNumber(int number) {
         Member member;
-        for (int i = 0; i < members.size(); i++) {
-            int id = members.get(i).getMemberNr();
+        for (int i = 0; i < membersList.size(); i++) {
+            int id = membersList.get(i).getMemberNr();
             if (id == number) {
-                member = members.get(i);
+                member = membersList.get(i);
                 return member;
             }
         }

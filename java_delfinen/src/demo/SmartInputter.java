@@ -19,6 +19,7 @@ public class SmartInputter {
             } else if (attr.equals("paid")) { member.setPayed(Boolean.parseBoolean(arg));
             } else if (attr.equals("active")) { member.setActive(Boolean.parseBoolean(arg));
             } else if (attr.equals("discipline")) { member.setDiscipline(arg);
+            } else if (attr.equals("time")) { member.setBestTime(Float.parseFloat(arg));
             }
         }
     }

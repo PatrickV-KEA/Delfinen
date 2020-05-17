@@ -1,7 +1,5 @@
 /**
- *
  * @author Adam Kasper Patrick
- *
  */
 
 package demo;
@@ -72,6 +70,19 @@ public class Member {
     public void addToTeam(String discipline, float bestTime) {
         this.discipline =   discipline;
         this.bestTime =     bestTime;
+    }
+
+    @Override
+    public String toString() {
+        return memberNr +
+                ". " + name +
+                " " + birthday +
+                "-" + cpr +
+                " Betaling: " + payed +
+                " Aktivt medlem: " + active +
+                " Disciplin: " + discipline +
+                " Bedste Tid: " + bestTime +
+                ". Stævne: " + tournaments;
     }
 
     // -------------------------------------------------------------------------------------------------

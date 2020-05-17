@@ -1,15 +1,18 @@
 package demo;
-
+/**
+ *
+ * @author kasper
+ *
+ */
 import java.util.ArrayList;
 
 public class Economics {
 
-    private FileHandler fileHandler = new FileHandler();
+    private FileReader fileReader = new FileReader();
     private UI ui = new UI();
-    ArrayList<Member> memberList = fileHandler.getMembersList();
+    ArrayList<Member> memberList = fileReader.getMembersList();
 
     public void printMemberArrears() {
-
         Member member;
         ArrayList<Member> arrearsList = new ArrayList<>();
 
@@ -22,7 +25,7 @@ public class Economics {
         ui.printArraylist(arrearsList);
     }
 
-    public int getTotalContingent() {
+    public void getTotalContingent() {
         int total = 0;
 
         for (int i = 0; i < memberList.size(); i++) {
@@ -40,7 +43,7 @@ public class Economics {
                 }
             }
         }
-        return total;
+        ui.printString("Total Kontingent: " + total + " kr.");
     }
 
     public void printMemberList(){
@@ -60,8 +63,16 @@ public class Economics {
                     contingent = 1200;
                 }
             }
+
             ui.printString("" + memberList.get(i) + " " + contingent + " kr. kontingent.");
         }
 
     }
+
+    public void changePaymentStatus(){
+        //Filewriter
+
+    }
+
+
 }
