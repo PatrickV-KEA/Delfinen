@@ -28,6 +28,8 @@ public class Member {
     // -------------------------------------------------------------------------------------------------
     // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
+    public Member() {}
+
     public Member( String name, LocalDate birthday, int cpr, boolean payed, boolean active) {
         this.name = name;
         this.birthday = birthday;
@@ -60,11 +62,11 @@ public class Member {
     // BEHAVIOR METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
 
-    public void addTournament(String name, int result, float newTime, LocalDate date) {
-        if (newTime < bestTime) {
-            bestTime = newTime;
+    public void addTournament(Tournament tournament) {
+        if (tournament.getTime() < bestTime) {
+            bestTime = tournament.getTime();
         }
-         tournaments.add(new Tournament(name, result, newTime, date));
+         tournaments.add(tournament);
     }
 
     public void addToTeam(String discipline, float bestTime) {

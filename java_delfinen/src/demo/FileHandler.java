@@ -5,8 +5,6 @@
 package demo;
 
 import java.io.*;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class FileHandler {
@@ -16,6 +14,7 @@ public class FileHandler {
     // -------------------------------------------------------------------------------------------------
     private UI ui = new UI();
     private File file = new File("Svømmeklub.txt");
+    private SmartInputter smartInputter = new SmartInputter();
 
     // -------------------------------------------------------------------------------------------------
     // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -77,6 +76,51 @@ public class FileHandler {
         try {
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
+
+            //READ A LINE FOR EVERY LOOP
+            String line;
+            while ((line = br.readLine()) != null) {
+
+                if (!line.isEmpty()) {
+                    String[] lineArr = line.split("¤");
+                    String[] lineMember = lineArr[0].split(" ");
+
+                    //INSTANTIATE MEMBER
+                    Member member = new Member();
+                    for (int i = 0; i < lineMember.length; i++) {
+                        smartInputter.input(member, lineMember[i]);
+                    }
+
+                    //ADD TOURNAMENTS
+                    if (lineArr.length > 1) {
+                        for (int i = 1; i < lineArr.length; i++) {
+                            String[] lineContents = lineArr[i].split(" ");
+                            Tournament tournament = new Tournament();
+
+                            for (int j = 0; j < lineContents.length; j++) {
+                                smartInputter.input(tournament, lineContents[j]);
+                            }
+
+                            member.addTournament(tournament);
+                        } // END OF LOOP
+                    }
+                    memberArrayList.add(member);
+                }
+            }// END OF LOOP
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return memberArrayList;
+    }
+    /*
+    public ArrayList<Member> getMembersList() {
+
+        ArrayList<Member> memberArrayList = new ArrayList<>();
+
+        try {
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
             StringBuffer sb = new StringBuffer();
 
             String line;
@@ -114,6 +158,7 @@ public class FileHandler {
                     }
 
                     //ADD TOURNAMENTS
+                    Tournament tournament;
                     if (lineArr.length > 2) {
                         for (int i = 2; i < lineArr.length; i++) {
                             String[] lineContents = lineArr[i].split(" ");
@@ -122,28 +167,28 @@ public class FileHandler {
                                 int tResult = Integer.parseInt(lineContents[2].split("=")[1]);
                                 float tTime = Float.parseFloat(lineContents[3].split("=")[1]);
                                 LocalDate tDate = LocalDate.parse(lineContents[4].split("=")[1], DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-                                member.addTournament(tName, tResult, tTime, tDate);
+                                tournament = new Tournament(tName, tResult, tTime, tDate);
+                                member.addTournament(tournament);
                             } else {
                                 String tName = lineContents[0].split("=")[1];
                                 int tResult = Integer.parseInt(lineContents[1].split("=")[1]);
                                 float tTime = Float.parseFloat(lineContents[2].split("=")[1]);
                                 LocalDate tDate = LocalDate.parse(lineContents[3].split("=")[1], DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-                                member.addTournament(tName, tResult, tTime, tDate);
+                                tournament = new Tournament(tName, tResult, tTime, tDate);
+                                member.addTournament(tournament);
                             }
                         } // END OF LOOP
                     }
-
                     memberArrayList.add(member);
                 }
             }// END OF LOOP
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         return memberArrayList;
     }
+    */
     /*
     public void writeOrder(Order order) {
         try {

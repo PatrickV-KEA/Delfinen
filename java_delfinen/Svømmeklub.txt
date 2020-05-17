@@ -1,4 +1,4 @@
-id=1 name=Adam date=14/03/1996 cpr=8755 payed=true active=true ¤ discipline=Rygkrawl time=90
-id=2 name=Kasper date=23/05/1997 cpr=8723 payed=true active=true ¤ discipline=Krawl time=99 ¤ name=Kolding_water_rave result=3 time=96 date=02/04/2020
-id=3 name=Patrick date=21/07/1992 cpr=8989 payed=false active=false
-id=4 name=Bolette date=01/08/2008 cpr=8924 payed=true active=true ¤ discipline=Butterfly time=119
+id=1 name=Adam date=14/03/1996 cpr=8755 paid=true active=true discipline=Rygkrawl time=90
+id=2 name=Kasper date=23/05/1997 cpr=8723 paid=true active=true discipline=Krawl time=99 ¤ name=Kolding_water_rave result=3 time=96 date=02/04/2020
+id=3 name=Patrick date=21/07/1992 cpr=8989 paid=false active=false
+id=4 name=Bolette date=01/08/2008 cpr=8924 paid=true active=true discipline=Butterfly time=119
