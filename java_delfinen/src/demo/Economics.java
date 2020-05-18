@@ -8,9 +8,7 @@ import java.util.ArrayList;
 
 public class Economics {
 
-    private MemberFileReader memberFileReader = new MemberFileReader();
     private UI ui = new UI();
-
     private ArrayList<Member> memberList;
 
     public Economics(ArrayList<Member> memberList) {

@@ -5,10 +5,9 @@ package demo;
 import java.util.ArrayList;
 
 public class CoachTeams {
-    private MemberFileReader memberFileReader = new MemberFileReader();
+
     private UI ui = new UI();
     private Members members = new Members();
-    ArrayList<Member> memberList = memberFileReader.getMembersList();
 
 
     public void assignSwimmer() {
@@ -69,7 +68,9 @@ public class CoachTeams {
         return null;
 }
 
-    public void topFiveSwimmers (){
+    public void topFiveSwimmers (){}
+
+    public void editResult(){}
 
     }
-}
+
