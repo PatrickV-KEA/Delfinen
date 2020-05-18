@@ -5,7 +5,7 @@ package demo;
  *
  */
 
-public class CoachMenu {
+public class MenuCoach {
 
     UI ui = new UI();
 

@@ -1,18 +1,26 @@
 package demo;
 
+/**
+ *
+ * @author Adam
+ *
+ */
+
 public class MenuController {
     // -------------------------------------------------------------------------------------------------
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    UI ui = new UI();
-    BoardMenu boardMenu = new BoardMenu();
-    CoachMenu coachMenu = new CoachMenu();
-    EconomicsMenu economicsMenu = new EconomicsMenu();
+    private UI ui = new UI();
+    private MenuBoard menuBoard = new MenuBoard();
+    private MenuCoach menuCoach = new MenuCoach();
+    private MenuEconomics menuEconomics = new MenuEconomics();
+    private Members members = new Members();
 
     // -------------------------------------------------------------------------------------------------
     // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    public MenuController() {}
+    public MenuController() {
+    }
 
     // -------------------------------------------------------------------------------------------------
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -26,15 +34,15 @@ public class MenuController {
             switch (ui.scannerInt()) {
                 case 1:
                     //træner menu
-                    coachMenu.menu();
+                    menuCoach.menu();
                     break;
                 case 2:
                     //kasser menu
-                    economicsMenu.menu();
+                    menuEconomics.menu(members.getMembersList());
                     break;
                 case 3:
                     //formands menu
-                    boardMenu.menu();
+                    menuBoard.menu(members.getMembersList());
                     break;
                 default:
                     throw new IllegalArgumentException();

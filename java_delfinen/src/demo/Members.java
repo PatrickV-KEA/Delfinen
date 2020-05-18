@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Members {
 
     private FileReader fileReader = new FileReader();
-    ArrayList<Member> membersList = fileReader.getMembersList();
+    private ArrayList<Member> membersList = fileReader.getMembersList();
 
     public Member getMemberFromNumber(int number) {
         Member member;
@@ -21,7 +21,11 @@ public class Members {
         }
         return null;
     }
-/*
+
+    public ArrayList<Member> getMembersList() {
+        return membersList;
+    }
+    /*
     public void SortMembers() {
         for (int i = 0; i < members.size(); i++) {
             if (members.get(i).getAge() < 18){
