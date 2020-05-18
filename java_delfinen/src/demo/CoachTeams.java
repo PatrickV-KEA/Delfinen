@@ -8,7 +8,11 @@ public class CoachTeams {
 
     private UI ui = new UI();
     private Members members = new Members();
-
+    private ArrayList<Member> memberList;
+    private ArrayList<Member> crawl = new ArrayList<>();
+    private ArrayList<Member> backCrawl = new ArrayList<>();
+    private ArrayList<Member> butterfly = new ArrayList<>();
+    private ArrayList<Member> breast = new ArrayList<>();
 
     public void assignSwimmer() {
         Boolean condition = true;
@@ -68,9 +72,44 @@ public class CoachTeams {
         return null;
 }
 
-    public void topFiveSwimmers (){}
+    public void topFive () {
+
+
+    }
+    public void topFiveCrawl () {
+
+        for (int i = 0; i < memberList.size(); i++) {
+            if (memberList.get(i).getDiscipline() == "crawl") {
+
+            }
+        }
+    }
+    public void topFiveBackCrawl () {
+
+        for (int i = 0; i < memberList.size(); i++) {
+            if (memberList.get(i).getDiscipline() == "rygcrawl") {
+
+            }
+        }
+    }
+    public void topFiveButterfly () {
+
+        for (int i = 0; i < memberList.size(); i++) {
+            if (memberList.get(i).getDiscipline() == "butterfly") {
+
+            }
+        }
+    }
+    public void topFiveBreast () {
+
+        for (int i = 0; i < memberList.size(); i++) {
+            if (memberList.get(i).getDiscipline() == "brystsvømning") {
+
+            }
+        }
+    }
 
     public void editResult(){}
 
-    }
+}
 
