@@ -9,9 +9,13 @@ import java.util.ArrayList;
 
 public class MenuBoard {
     UI ui = new UI();
+    private ArrayList<Member> members;
 
+    public MenuBoard(ArrayList<Member> members) {
+        this.members = members;
+    }
 
-    public void menu(ArrayList<Member> members) {
+    public void menu() {
         String name;
         LocalDate birthday;
         int cpr;

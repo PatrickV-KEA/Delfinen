@@ -10,7 +10,11 @@ public class Economics {
 
     private FileReader fileReader = new FileReader();
     private UI ui = new UI();
-    ArrayList<Member> memberList = fileReader.getMembersList();
+    private ArrayList<Member> memberList;
+
+    public Economics(ArrayList<Member> memberList) {
+        this.memberList = memberList;
+    }
 
     public void printMemberArrears() {
         Member member;

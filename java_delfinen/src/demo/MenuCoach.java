@@ -1,4 +1,7 @@
 package demo;
+
+import java.util.ArrayList;
+
 /**
  *
  * @author Adam
@@ -8,25 +11,42 @@ package demo;
 public class MenuCoach {
 
     UI ui = new UI();
+    ArrayList<Member> members;
+
+    public MenuCoach(ArrayList<Member> members) {
+        this.members = members;
+    }
 
     public void menu() {
-        //DENNE MENU ER SLET IKKE KLAR ENDNU!
-        ui.printString("Tryk 1 For træner");
-        ui.printString("Tryk 2 For kasseren");
-        ui.printString("Tryk 3 For formanden");
+        /*
+        Noter til opbygning af menu:
+        se medlemsliste
+        tilføj medlem til svømmehold
+        ændre resultater for medlem
+        top bedste svømmere for hver diciplin
+
+         */
+        ui.printString("Tryk 1 For at se medlemsliste");
+        ui.printString("Tryk 2 For at tilføj medlem til svømmehold");
+        ui.printString("Tryk 3 For at ændre resultater for medlem");
+        ui.printString("Tryk 4 For at se top bedste svømmere for hver diciplin");
         ui.print(">>");
         try {
             switch (ui.scannerInt()) {
                 case 1:
-                    //træner menu
+                    //medlemsliste
 
                     break;
                 case 2:
-                    //kasser menu
+                    //tilføj svømmer til hold
 
                     break;
                 case 3:
-                    //formands menu
+                    //ændre resultat for svømmer
+
+                    break;
+                case 4:
+                    // se top 5
 
                     break;
                 default:
