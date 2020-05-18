@@ -1,16 +1,14 @@
 package demo;
 /**
- *
  * @author kasper
- *
  */
 import java.util.ArrayList;
 
 public class CoachTeams {
-    private FileReader fileReader = new FileReader();
+    private MemberFileReader memberFileReader = new MemberFileReader();
     private UI ui = new UI();
     private Members members = new Members();
-    ArrayList<Member> memberList = fileReader.getMembersList();
+    ArrayList<Member> memberList = memberFileReader.getMembersList();
 
 
     public void assignSwimmer() {
@@ -71,5 +69,7 @@ public class CoachTeams {
         return null;
 }
 
+    public void topFiveSwimmers (){
 
+    }
 }

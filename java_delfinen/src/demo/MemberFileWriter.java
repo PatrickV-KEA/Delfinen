@@ -1,22 +1,42 @@
+/**
+ * @author Patrick
+ */
 package demo;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.util.ArrayList;
 
-public class  FileWriter {
+public class MemberFileWriter {
 
     // -------------------------------------------------------------------------------------------------
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    private File file = new File("Svømmeklub.txt");
+    private File file = new File("temp.txt");
 
     // -------------------------------------------------------------------------------------------------
     // BEHAVIOR METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    public void addMember(Member member) {
+    public void writeMember(Member member) {
+        try {
+            FileWriter fw = new FileWriter(file, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+
+            bw.newLine();
+            bw.write(member.toFile());
+            bw.flush();
+
+            bw.close();
+            fw.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void updateMembersList(ArrayList<Member> membersList) {
 
     }
-    /*
-    public void writeOrder(Order order) {
+    /*public void writeOrder(Order order) {
         try {
             File file = new File("activeOrders.txt");
             FileWriter fw = new FileWriter(file, true);
@@ -83,6 +103,5 @@ public class  FileWriter {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-     */
+    }*/
 }

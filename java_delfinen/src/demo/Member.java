@@ -13,11 +13,11 @@ public class Member {
     // -------------------------------------------------------------------------------------------------
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    private int         memberNr;
+    private int         id;
     private String      name;
     private LocalDate   birthday;
     private int         cpr;
-    private boolean     payed;
+    private boolean paid;
     private String      discipline;
     private float       bestTime;
     private boolean     active;
@@ -28,29 +28,29 @@ public class Member {
     // -------------------------------------------------------------------------------------------------
     public Member() {}
 
-    public Member( String name, LocalDate birthday, int cpr, boolean payed, boolean active) {
+    public Member(String name, LocalDate birthday, int cpr, boolean paid, boolean active) {
         this.name = name;
         this.birthday = birthday;
         this.cpr = cpr;
-        this.payed = payed;
+        this.paid = paid;
         this.active = active;
     }
 
-    public Member(int memberNr, String name, LocalDate birthday, int cpr, boolean payed, boolean active) {
-        this.memberNr = memberNr;
+    public Member(int id, String name, LocalDate birthday, int cpr, boolean paid, boolean active) {
+        this.id = id;
         this.name =     name;
         this.birthday = birthday;
         this.cpr =      cpr;
-        this.payed =    payed;
+        this.paid = paid;
         this.active =   active;
     }
 
-    public Member(int memberNr, String name, LocalDate birthday, int cpr, boolean payed, boolean active, String discipline, float bestTime) {
-        this.memberNr =     memberNr;
+    public Member(int id, String name, LocalDate birthday, int cpr, boolean paid, boolean active, String discipline, float bestTime) {
+        this.id =     id;
         this.name =         name;
         this.birthday =     birthday;
         this.cpr =          cpr;
-        this.payed =        payed;
+        this.paid = paid;
         this.active =       active;
         this.discipline =   discipline;
         this.bestTime =     bestTime;
@@ -72,13 +72,37 @@ public class Member {
         this.bestTime =     bestTime;
     }
 
+    public String toFile() {
+        String str =
+                "id=" + id +
+                " name=" + name +
+                " date=" + birthday +
+                " cpr=" + cpr +
+                " paid=" + paid +
+                " active=" + active;
+        if (discipline != null) {
+            str +=
+                " discipline=" + discipline +
+                " time=" + bestTime;
+        }
+        str += " ¤ ";
+        for (int i = 0; i < tournaments.size(); i++) {
+            str +=
+                    "name=" + tournaments.get(i).getName() +
+                    " result=" + tournaments.get(i).getResult() +
+                    " time=" + tournaments.get(i).getTime() +
+                    " date=" + tournaments.get(i).getDate();
+        }
+        return str;
+    }
+
     @Override
     public String toString() {
-        return memberNr +
+        return id +
                 ". " + name +
                 " " + birthday +
                 "-" + cpr +
-                " Betaling: " + payed +
+                " Betaling: " + paid +
                 " Aktivt medlem: " + active +
                 " Disciplin: " + discipline +
                 " Bedste Tid: " + bestTime +
@@ -88,12 +112,12 @@ public class Member {
     // -------------------------------------------------------------------------------------------------
     // BEHAVIOR ACCESSORS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    public int getMemberNr() {
-        return memberNr;
+    public int getId() {
+        return id;
     }
 
-    public void setMemberNr(int memberNr) {
-        this.memberNr = memberNr;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -127,12 +151,12 @@ public class Member {
         this.cpr = cpr;
     }
 
-    public boolean isPayed() {
-        return payed;
+    public boolean isPaid() {
+        return paid;
     }
 
-    public void setPayed(boolean payed) {
-        this.payed = payed;
+    public void setPaid(boolean paid) {
+        this.paid = paid;
     }
 
     public String getDiscipline() {

@@ -8,20 +8,29 @@ import java.util.ArrayList;
 
 public class Economics {
 
-    private FileReader fileReader = new FileReader();
+    private MemberFileReader memberFileReader = new MemberFileReader();
     private UI ui = new UI();
+<<<<<<< HEAD
     private ArrayList<Member> memberList;
 
     public Economics(ArrayList<Member> memberList) {
         this.memberList = memberList;
     }
+=======
+<<<<<<< HEAD
+    ArrayList<Member> memberList = memberFileReader.getMembersList();
+=======
+    ArrayList<Member> memberList = fileReader.getMembersList();
+    private Members members = new Members();
+>>>>>>> b12828edfc4564dd9c801592e37d3aa409e626a7
+>>>>>>> c05689ff09a9489e7def80ffc6bca27efe236ce7
 
     public void printMemberArrears() {
         Member member;
         ArrayList<Member> arrearsList = new ArrayList<>();
 
         for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).isPayed() == false) {
+            if (memberList.get(i).isPaid() == false) {
                 member = memberList.get(i);
                 arrearsList.add(member);
             }
@@ -73,10 +82,35 @@ public class Economics {
 
     }
 
-    public void changePaymentStatus(){
-        //Filewriter
+    /*public void changePaymentStatus(){
+        Member member;
+        ui.printArraylist(memberList);
 
-    }
+        try {
+            while (true) {
+                ui.clear();
+                ui.printArraylist(memberList);
+                ui.printString("Vælg et medlem for at opdatere betalingsstatus. ");
+                ui.print("\nAngiv medlemsnummer >>");
+
+                int number = ui.scannerInt();
+                member = members.getMemberFromNumber(number);
+                if (member == null) {
+                    ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >>");
+                    ui.scannerLine();
+                    ui.clear();
+                } else {
+                    break;
+                }
+            }
+
+        } catch (IllegalArgumentException e) {
+            ui.printString("Dette medlemsnummer findes ikke...");
+        }
+
+    }*/
+
+
 
 
 }
