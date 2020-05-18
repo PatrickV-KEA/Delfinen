@@ -11,6 +11,7 @@ public class Economics {
     private FileReader fileReader = new FileReader();
     private UI ui = new UI();
     ArrayList<Member> memberList = fileReader.getMembersList();
+    private Members members = new Members();
 
     public void printMemberArrears() {
         Member member;
@@ -69,10 +70,35 @@ public class Economics {
 
     }
 
-    public void changePaymentStatus(){
-        //Filewriter
+    /*public void changePaymentStatus(){
+        Member member;
+        ui.printArraylist(memberList);
 
-    }
+        try {
+            while (true) {
+                ui.clear();
+                ui.printArraylist(memberList);
+                ui.printString("Vælg et medlem for at opdatere betalingsstatus. ");
+                ui.print("\nAngiv medlemsnummer >>");
+
+                int number = ui.scannerInt();
+                member = members.getMemberFromNumber(number);
+                if (member == null) {
+                    ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >>");
+                    ui.scannerLine();
+                    ui.clear();
+                } else {
+                    break;
+                }
+            }
+
+        } catch (IllegalArgumentException e) {
+            ui.printString("Dette medlemsnummer findes ikke...");
+        }
+
+    }*/
+
+
 
 
 }
