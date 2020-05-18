@@ -6,14 +6,8 @@ package demo;
 import java.util.ArrayList;
 
 public class Members {
-
-<<<<<<< HEAD
     private MemberFileReader memberFileReader = new MemberFileReader();
     ArrayList<Member> membersList = memberFileReader.getMembersList();
-=======
-    private FileReader fileReader = new FileReader();
-    private ArrayList<Member> membersList = fileReader.getMembersList();
->>>>>>> b12828edfc4564dd9c801592e37d3aa409e626a7
 
     public Member getMemberFromNumber(int number) {
         Member member;

@@ -75,20 +75,20 @@ public class Member {
     public String toFile() {
         String str =
                 "id=" + id +
-                " name=" + name +
+                " name=" + name.replace(' ', '_') +
                 " date=" + birthday +
                 " cpr=" + cpr +
                 " paid=" + paid +
                 " active=" + active;
         if (discipline != null) {
             str +=
-                " discipline=" + discipline +
+                " discipline=" + discipline.replace(' ', '_') +
                 " time=" + bestTime;
         }
         str += " ¤ ";
         for (int i = 0; i < tournaments.size(); i++) {
             str +=
-                    "name=" + tournaments.get(i).getName() +
+                    "name=" + tournaments.get(i).getName().replace(' ', '_') +
                     " result=" + tournaments.get(i).getResult() +
                     " time=" + tournaments.get(i).getTime() +
                     " date=" + tournaments.get(i).getDate();

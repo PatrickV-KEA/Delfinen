@@ -10,12 +10,8 @@ public class Economics {
 
     private MemberFileReader memberFileReader = new MemberFileReader();
     private UI ui = new UI();
-<<<<<<< HEAD
     ArrayList<Member> memberList = memberFileReader.getMembersList();
-=======
-    ArrayList<Member> memberList = fileReader.getMembersList();
     private Members members = new Members();
->>>>>>> b12828edfc4564dd9c801592e37d3aa409e626a7
 
     public void printMemberArrears() {
         Member member;
