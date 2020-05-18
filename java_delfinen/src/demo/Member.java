@@ -197,4 +197,5 @@ public class Member {
         //Sorterer efter stigende best times
         return this.bestTime - compareTime;
     }
+
 }
