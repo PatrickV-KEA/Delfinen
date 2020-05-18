@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 class EconomicsTest {
-    private FileReader fileReader = new FileReader();
+    private MemberFileReader memberFileReader = new MemberFileReader();
     private UI ui = new UI();
-    ArrayList<Member> memberList = fileReader.getMembersList();
+    ArrayList<Member> memberList = memberFileReader.getMembersList();
 
     @Test
     public void printMemberArrears() {
@@ -15,7 +15,7 @@ class EconomicsTest {
         ArrayList<Member> arrearsList = new ArrayList<>();
 
         for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).isPayed() == false) {
+            if (memberList.get(i).isPaid() == false) {
                 member = memberList.get(i);
                 arrearsList.add(member);
             }

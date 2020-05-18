@@ -1,5 +1,8 @@
 package demo;
 
+import java.util.ArrayList;
+import java.util.logging.FileHandler;
+
 /**
  *
  * @author Adam
@@ -11,10 +14,11 @@ public class MenuController {
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
     private UI ui = new UI();
-    private MenuBoard menuBoard = new MenuBoard();
-    private MenuCoach menuCoach = new MenuCoach();
-    private MenuEconomics menuEconomics = new MenuEconomics();
-    private Members members = new Members();
+    private FileReader fileReader = new FileReader();
+    private ArrayList<Member> members = fileReader.getMembersList() ;  // det her skal kigges efter.....
+    private MenuBoard menuBoard = new MenuBoard(members);
+    private MenuCoach menuCoach = new MenuCoach(members);
+    private MenuEconomics menuEconomics = new MenuEconomics(members);
 
     // -------------------------------------------------------------------------------------------------
     // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -38,11 +42,11 @@ public class MenuController {
                     break;
                 case 2:
                     //kasser menu
-                    menuEconomics.menu(members.getMembersList());
+                    menuEconomics.menu();
                     break;
                 case 3:
                     //formands menu
-                    menuBoard.menu(members.getMembersList());
+                    menuBoard.menu();
                     break;
                 default:
                     throw new IllegalArgumentException();
