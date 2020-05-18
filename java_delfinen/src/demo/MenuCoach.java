@@ -21,8 +21,8 @@ public class MenuCoach {
         tilføj medlem til svømmehold
         ændre resultater for medlem
         top bedste svømmere for hver diciplin
+        */
 
-         */
         ui.printString("Tryk 1 For at se medlemsliste");
         ui.printString("Tryk 2 For at se holdlist");
         ui.printString("Tryk 3 For at tilføj medlem til svømmehold");
@@ -56,6 +56,7 @@ public class MenuCoach {
                 case 0:
                     //tilbage til hovedmenuen
                     break;
+
                 default:
                     throw new IllegalArgumentException();
             }
