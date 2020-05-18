@@ -71,7 +71,7 @@ public class Economics {
     }
 
     public void updateInfo(){
-        //Update 
+        //Update
     }
 
     /*public void changePaymentStatus(){
