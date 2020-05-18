@@ -8,11 +8,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
-<<<<<<< HEAD:java_delfinen/src/demo/MemberFileWriter.java
 public class MemberFileWriter {
-=======
-public class  FileWriter {
->>>>>>> b12828edfc4564dd9c801592e37d3aa409e626a7:java_delfinen/src/demo/FileWriter.java
 
     // -------------------------------------------------------------------------------------------------
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
