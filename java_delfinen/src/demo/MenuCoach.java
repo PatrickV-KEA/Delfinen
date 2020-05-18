@@ -1,7 +1,5 @@
 /**
- *
  * @author Adam
- *
  */
 package demo;
 
@@ -26,27 +24,37 @@ public class MenuCoach {
 
          */
         ui.printString("Tryk 1 For at se medlemsliste");
-        ui.printString("Tryk 2 For at tilføj medlem til svømmehold");
-        ui.printString("Tryk 3 For at ændre resultater for medlem");
-        ui.printString("Tryk 4 For at se top bedste svømmere for hver diciplin");
-        ui.print(">>");
+        ui.printString("Tryk 2 For at se holdlist");
+        ui.printString("Tryk 3 For at tilføj medlem til svømmehold");
+        ui.printString("Tryk 4 For at ændre resultater for medlem");
+        ui.printString("Tryk 5 For at se top bedste svømmere for hver diciplin");
+        ui.printString("Tryk 0 for at vende tilbage til hovedmenuen");
+        ui.print(">> ");
         try {
             switch (ui.scannerInt()) {
                 case 1:
                     //medlemsliste
 
                     break;
+
                 case 2:
-                    //tilføj svømmer til hold
+                    //se holdeliste
 
                     break;
                 case 3:
-                    //ændre resultat for svømmer
+                    //tilføj svømmer til hold
 
                     break;
                 case 4:
+                    //ændre resultat for svømmer
+
+                    break;
+                case 5:
                     // se top 5
 
+                    break;
+                case 0:
+                    //tilbage til hovedmenuen
                     break;
                 default:
                     throw new IllegalArgumentException();
