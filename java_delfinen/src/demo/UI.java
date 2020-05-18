@@ -34,7 +34,7 @@ public class UI {
 
     public void scannerLine() {
         scan.nextLine();
-        scan.nextLine();
+        //scan.nextLine();
     }
 
     public String scannerString() {
