@@ -70,6 +70,10 @@ public class Economics {
 
     }
 
+    public void updateInfo(){
+        //Update 
+    }
+
     /*public void changePaymentStatus(){
         Member member;
         ui.printArraylist(memberList);
