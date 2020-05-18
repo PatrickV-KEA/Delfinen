@@ -1,4 +1,6 @@
 /**
+ * For adding new members or changes to current members
+ *
  * @author Patrick
  */
 package demo;
@@ -13,7 +15,8 @@ public class MemberFileWriter {
     // -------------------------------------------------------------------------------------------------
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    private File file = new File("temp.txt");
+    private File fileTest = new File("Test/demo/Svømmeklub.txt");
+    private File file = new File("Svømmeklub.txt");
 
     // -------------------------------------------------------------------------------------------------
     // BEHAVIOR METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -22,86 +25,27 @@ public class MemberFileWriter {
         try {
             FileWriter fw = new FileWriter(file, true);
             BufferedWriter bw = new BufferedWriter(fw);
-
             bw.newLine();
             bw.write(member.toFile());
             bw.flush();
-
             bw.close();
             fw.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public void updateMembersList(ArrayList<Member> membersList) {
-
-    }
-    /*public void writeOrder(Order order) {
+    public void updateMembers(ArrayList<Member> membersList) {
         try {
-            File file = new File("activeOrders.txt");
-            FileWriter fw = new FileWriter(file, true);
-            BufferedWriter bw = new BufferedWriter(fw);
-
-            bw.newLine();
-            bw.write(order.toString());
-            bw.flush();
-
-            bw.close();
-            fw.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public void removeOrder(Order order) {
-        try {
-
-            File file = new File("activeOrders.txt");
-            FileReader fr = new FileReader(file);
-            BufferedReader br = new BufferedReader(fr);
-
-            StringBuffer sb = new StringBuffer();
-
-            String line;
-            while ((line = br.readLine()) != null) {
-
-                if (!line.isEmpty()) {
-                    int thisInt = Character.getNumericValue((char) line.charAt(0));
-
-                    if (thisInt != order.getOrderNumber()) {
-                        sb.append(line + "\n");
-                    }
-                }
+            FileWriter fw = new FileWriter(file, false);
+            StringBuilder sb = new StringBuilder();
+            for (Member member : membersList) {
+                sb.append(member.toFile()).append("\n");
             }
-
-            br.close();
-            fr.close();
-
-            FileWriter fw = new FileWriter(file);
             fw.write(sb.toString());
             fw.flush();
-
             fw.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-    public void writeStatistic(Order order) {
-        try {
-            File file = new File("finishedOrders.txt");
-            FileWriter fw = new FileWriter(file, true);
-            BufferedWriter bw = new BufferedWriter(fw);
-
-            bw.newLine();
-            bw.write(order.toString());
-            bw.flush();
-
-            bw.close();
-            fw.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }*/
 }

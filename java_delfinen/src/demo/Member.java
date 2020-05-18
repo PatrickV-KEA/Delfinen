@@ -13,20 +13,21 @@ public class Member {
     // -------------------------------------------------------------------------------------------------
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    private int         id;
-    private String      name;
-    private LocalDate   birthday;
-    private int         cpr;
+    private int id;
+    private String name;
+    private LocalDate birthday;
+    private int cpr;
     private boolean paid;
-    private String      discipline;
-    private float       bestTime;
-    private boolean     active;
+    private String discipline;
+    private float bestTime;
+    private boolean active;
     private ArrayList<Tournament> tournaments = new ArrayList<>();
 
     // -------------------------------------------------------------------------------------------------
     // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    public Member() {}
+    public Member() {
+    }
 
     public Member(String name, LocalDate birthday, int cpr, boolean paid, boolean active) {
         this.name = name;
@@ -38,22 +39,22 @@ public class Member {
 
     public Member(int id, String name, LocalDate birthday, int cpr, boolean paid, boolean active) {
         this.id = id;
-        this.name =     name;
+        this.name = name;
         this.birthday = birthday;
-        this.cpr =      cpr;
+        this.cpr = cpr;
         this.paid = paid;
-        this.active =   active;
+        this.active = active;
     }
 
     public Member(int id, String name, LocalDate birthday, int cpr, boolean paid, boolean active, String discipline, float bestTime) {
-        this.id =     id;
-        this.name =         name;
-        this.birthday =     birthday;
-        this.cpr =          cpr;
+        this.id = id;
+        this.name = name;
+        this.birthday = birthday;
+        this.cpr = cpr;
         this.paid = paid;
-        this.active =       active;
-        this.discipline =   discipline;
-        this.bestTime =     bestTime;
+        this.active = active;
+        this.discipline = discipline;
+        this.bestTime = bestTime;
     }
 
     // -------------------------------------------------------------------------------------------------
@@ -64,12 +65,12 @@ public class Member {
         if (tournament.getTime() < bestTime) {
             bestTime = tournament.getTime();
         }
-         tournaments.add(tournament);
+        tournaments.add(tournament);
     }
 
     public void addToTeam(String discipline, float bestTime) {
-        this.discipline =   discipline;
-        this.bestTime =     bestTime;
+        this.discipline = discipline;
+        this.bestTime = bestTime;
     }
 
     public String toFile() {
@@ -136,7 +137,7 @@ public class Member {
         this.birthday = birthday;
     }
 
-    public int getAge (){
+    public int getAge() {
         int currentYear = Calendar.getInstance().get(Calendar.YEAR);
         int birthYear = birthday.getYear();
         int age = currentYear - birthYear;
@@ -189,5 +190,11 @@ public class Member {
 
     public void setTournaments(ArrayList<Tournament> tournaments) {
         this.tournaments = tournaments;
+    }
+
+    public float compareTo(Member compareMem) {
+        float compareTime = ((Member) compareMem).getBestTime();
+        //Sorterer efter stigende best times
+        return this.bestTime - compareTime;
     }
 }
