@@ -8,16 +8,16 @@ import java.util.ArrayList;
 
 public class Economics {
 
-    private FileReader fileReader = new FileReader();
+    private MemberFileReader memberFileReader = new MemberFileReader();
     private UI ui = new UI();
-    ArrayList<Member> memberList = fileReader.getMembersList();
+    ArrayList<Member> memberList = memberFileReader.getMembersList();
 
     public void printMemberArrears() {
         Member member;
         ArrayList<Member> arrearsList = new ArrayList<>();
 
         for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).isPayed() == false) {
+            if (memberList.get(i).isPaid() == false) {
                 member = memberList.get(i);
                 arrearsList.add(member);
             }

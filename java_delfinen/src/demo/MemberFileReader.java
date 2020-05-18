@@ -6,7 +6,7 @@ package demo;
 import java.io.*;
 import java.util.ArrayList;
 
-public class FileReader {
+public class MemberFileReader {
 
     // -------------------------------------------------------------------------------------------------
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -7,13 +7,13 @@ import java.util.ArrayList;
 
 public class Members {
 
-    private FileReader fileReader = new FileReader();
-    ArrayList<Member> membersList = fileReader.getMembersList();
+    private MemberFileReader memberFileReader = new MemberFileReader();
+    ArrayList<Member> membersList = memberFileReader.getMembersList();
 
     public Member getMemberFromNumber(int number) {
         Member member;
         for (int i = 0; i < membersList.size(); i++) {
-            int id = membersList.get(i).getMemberNr();
+            int id = membersList.get(i).getId();
             if (id == number) {
                 member = membersList.get(i);
                 return member;
