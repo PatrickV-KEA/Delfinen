@@ -22,5 +22,8 @@ class MemberFileReaderTest {
         assertEquals("Rygkrawl", members.get(0).getDiscipline());
         assertEquals(90, members.get(0).getBestTime());
 
+        for (Member member:members) {
+            System.out.println(member);
+        }
     }
 }
