@@ -1,12 +1,11 @@
-package demo;
-
-import java.util.ArrayList;
-
 /**
  *
  * @author Adam
  *
  */
+package demo;
+
+import java.util.ArrayList;
 
 public class MenuCoach {
 

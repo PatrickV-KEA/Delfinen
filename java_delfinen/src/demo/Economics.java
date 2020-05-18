@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class Economics {
 
     private UI ui = new UI();
+    private Members members = new Members();
     private ArrayList<Member> memberList;
 
     public Economics(ArrayList<Member> memberList) {
