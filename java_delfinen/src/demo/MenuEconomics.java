@@ -43,7 +43,7 @@ public class MenuEconomics {
                     break;
                 case 4:
                     //indkriv betaling
-                    economics.changePaymentStatus();
+                    //economics.changePaymentStatus();
                     break;
                 case 5:
                     //se samlede kontingent
