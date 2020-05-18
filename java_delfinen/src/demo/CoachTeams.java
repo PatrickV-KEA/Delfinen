@@ -3,6 +3,7 @@ package demo;
  * @author kasper
  */
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class CoachTeams {
 
@@ -74,38 +75,13 @@ public class CoachTeams {
 
     public void topFive () {
 
-
     }
-    public void topFiveCrawl () {
-
+    public void teamSorting () {
         for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).getDiscipline() == "crawl") {
-
-            }
-        }
-    }
-    public void topFiveBackCrawl () {
-
-        for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).getDiscipline() == "rygcrawl") {
-
-            }
-        }
-    }
-    public void topFiveButterfly () {
-
-        for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).getDiscipline() == "butterfly") {
-
-            }
-        }
-    }
-    public void topFiveBreast () {
-
-        for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).getDiscipline() == "brystsvømning") {
-
-            }
+            if (memberList.get(i).getDiscipline() == "crawl") { crawl.add(memberList.get(i)); }
+            if (memberList.get(i).getDiscipline() == "rygcrawl") { backCrawl.add(memberList.get(i)); }
+            if (memberList.get(i).getDiscipline() == "butterfly") { butterfly.add(memberList.get(i)); }
+            if (memberList.get(i).getDiscipline() == "brystsvømning") { breast.add(memberList.get(i)); }
         }
     }
 
