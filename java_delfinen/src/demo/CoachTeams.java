@@ -10,10 +10,7 @@ public class CoachTeams {
     private UI ui = new UI();
     private Members members = new Members();
     private ArrayList<Member> memberList;
-    private ArrayList<Member> crawl = new ArrayList<>();
-    private ArrayList<Member> backCrawl = new ArrayList<>();
-    private ArrayList<Member> butterfly = new ArrayList<>();
-    private ArrayList<Member> breast = new ArrayList<>();
+
 
     public void assignSwimmer() {
         Boolean condition = true;
@@ -73,17 +70,81 @@ public class CoachTeams {
         return null;
 }
 
-    public void topFive () {
+    public void Teams () {
+        ArrayList<Member> crawl = new ArrayList<>();
+        ArrayList<Member> backCrawl = new ArrayList<>();
+        ArrayList<Member> butterfly = new ArrayList<>();
+        ArrayList<Member> breast = new ArrayList<>();
 
-    }
-    public void teamSorting () {
         for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).getDiscipline() == "crawl") { crawl.add(memberList.get(i)); }
-            if (memberList.get(i).getDiscipline() == "rygcrawl") { backCrawl.add(memberList.get(i)); }
-            if (memberList.get(i).getDiscipline() == "butterfly") { butterfly.add(memberList.get(i)); }
-            if (memberList.get(i).getDiscipline() == "brystsvømning") { breast.add(memberList.get(i)); }
+            if (memberList.get(i).getDiscipline() == "crawl") {
+                crawl.add(memberList.get(i));
+            }
+            if (memberList.get(i).getDiscipline() == "rygcrawl") {
+                backCrawl.add(memberList.get(i));
+            }
+            if (memberList.get(i).getDiscipline() == "butterfly") {
+                butterfly.add(memberList.get(i));
+            }
+            if (memberList.get(i).getDiscipline() == "brystsvømning") {
+                breast.add(memberList.get(i));
+            }
         }
+        ui.printString("Crawl holdet:");
+        ui.printArraylist(crawl);
+        ui.printString("");
+        ui.printString("Rygrawl holdet:");
+        ui.printArraylist(backCrawl);
+        ui.printString("");
+        ui.printString("Butterfly holdet:");
+        ui.printArraylist(butterfly);
+        ui.printString("");
+        ui.printString("Brystsvømmer holdet:");
+        ui.printArraylist(breast);
+        ui.printString("");
     }
+    public void topFive() {
+        ArrayList<Member> crawl = new ArrayList<>();
+        ArrayList<Member> backCrawl = new ArrayList<>();
+        ArrayList<Member> butterfly = new ArrayList<>();
+        ArrayList<Member> breast = new ArrayList<>();
+
+        for (int i = 0; i < memberList.size(); i++) {
+            if (memberList.get(i).getDiscipline() == "crawl") {
+                crawl.add(memberList.get(i));
+            }
+            if (memberList.get(i).getDiscipline() == "rygcrawl") {
+                backCrawl.add(memberList.get(i));
+            }
+            if (memberList.get(i).getDiscipline() == "butterfly") {
+                butterfly.add(memberList.get(i));
+            }
+            if (memberList.get(i).getDiscipline() == "brystsvømning") {
+                breast.add(memberList.get(i));
+            }
+        }
+        Collections.sort(crawl);
+        Collections.sort(backCrawl);
+        Collections.sort(butterfly);
+        Collections.sort(breast);
+        crawl.subList(5, crawl.size()).clear();
+        backCrawl.subList(5, backCrawl.size()).clear();
+        butterfly.subList(5, butterfly.size()).clear();
+        breast.subList(5, breast.size()).clear();
+        ui.printString("Top 5 i Crawl:");
+        ui.printArraylist(crawl);
+        ui.printString("");
+        ui.printString("Top 5 i Rygrawl:");
+        ui.printArraylist(backCrawl);
+        ui.printString("");
+        ui.printString("Top 5 i Butterfly:");
+        ui.printArraylist(butterfly);
+        ui.printString("");
+        ui.printString("Top 5 i Brystsvømning:");
+        ui.printArraylist(breast);
+        ui.printString("");
+    }
+
 
     public void editResult(){}
 
