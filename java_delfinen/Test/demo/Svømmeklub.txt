@@ -1,0 +1,4 @@
+id=1 name=Kasper date=02-06-1997 cpr=8989 paid=true active=true discipline=Rygkrawl time=43.0 ¤ name=Kolding_water_rave result=3 time=43.0 date=02-04-2020
+id=1 name=Kasper date=02-06-1997 cpr=8989 paid=true active=true discipline=Rygkrawl time=43.0 ¤ name=Kolding_water_rave result=3 time=43.0 date=02-04-2020
+id=1 name=Kasper date=02-06-1997 cpr=8989 paid=true active=true discipline=Rygkrawl time=43.0 ¤ name=Kolding_water_rave result=3 time=43.0 date=02-04-2020
+id=1 name=Kasper date=02-06-1997 cpr=8989 paid=true active=true discipline=Rygkrawl time=43.0 ¤ name=Kolding_water_rave result=3 time=43.0 date=02-04-2020

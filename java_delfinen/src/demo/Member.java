@@ -5,6 +5,7 @@
 package demo;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -77,7 +78,7 @@ public class Member {
         String str =
                 "id=" + id +
                 " name=" + name.replace(' ', '_') +
-                " date=" + birthday +
+                " date=" + birthday.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")) +
                 " cpr=" + cpr +
                 " paid=" + paid +
                 " active=" + active;
@@ -86,13 +87,12 @@ public class Member {
                 " discipline=" + discipline.replace(' ', '_') +
                 " time=" + bestTime;
         }
-        str += " ¤ ";
         for (int i = 0; i < tournaments.size(); i++) {
-            str +=
-                    "name=" + tournaments.get(i).getName().replace(' ', '_') +
+            str +=  " ¤" +
+                    " name=" + tournaments.get(i).getName().replace(' ', '_') +
                     " result=" + tournaments.get(i).getResult() +
                     " time=" + tournaments.get(i).getTime() +
-                    " date=" + tournaments.get(i).getDate();
+                    " date=" + tournaments.get(i).getDate().format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         }
         return str;
     }
