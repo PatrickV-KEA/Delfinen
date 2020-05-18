@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class Member {
+public class Member implements Comparable<Member> {
 
     // -------------------------------------------------------------------------------------------------
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -192,10 +192,11 @@ public class Member {
         this.tournaments = tournaments;
     }
 
-    public float compareTo(Member compareMem) {
+    @Override
+    public int compareTo(Member compareMem) {
         float compareTime = ((Member) compareMem).getBestTime();
         //Sorterer efter stigende best times
-        return this.bestTime - compareTime;
+        return (int) (this.bestTime - compareTime);
     }
 
 }
