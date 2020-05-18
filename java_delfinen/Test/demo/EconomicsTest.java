@@ -1,7 +1,9 @@
+/**
+ * @author Patrick
+ */
 package demo;
 
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 
 class EconomicsTest {
