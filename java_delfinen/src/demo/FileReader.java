@@ -1,7 +1,6 @@
 /**
  * @author Patrick
  */
-
 package demo;
 
 import java.io.*;
@@ -12,7 +11,6 @@ public class FileReader {
     // -------------------------------------------------------------------------------------------------
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    private UI ui = new UI();
     private File file = new File("Svømmeklub.txt");
     private SmartInputter smartInputter = new SmartInputter();
 
@@ -38,97 +36,25 @@ public class FileReader {
                     Member member = new Member();
                     for (int i = 0; i < lineMember.length; i++) {
                         smartInputter.input(member, lineMember[i]);
-                    }
+                    } // END OF FOR-LOOP
 
                     //ADD TOURNAMENTS IF PRESENT
                     if (lineArr.length > 1) {
                         for (int i = 1; i < lineArr.length; i++) {
                             String[] lineContents = lineArr[i].split(" ");
                             Tournament tournament = new Tournament();
-
                             for (int j = 0; j < lineContents.length; j++) {
                                 smartInputter.input(tournament, lineContents[j]);
-                            }
-
+                            } // END OF FOR-LOOP
                             member.addTournament(tournament);
-                        } // END OF LOOP
+                        } // END OF FOR-LOOP
                     }
                     memberArrayList.add(member);
                 }
-            }// END OF LOOP
+            }// END OF WHILE-LOOP
         } catch (Exception e) {
             e.printStackTrace();
         }
         return memberArrayList;
     }
-    /*
-    public void writeOrder(Order order) {
-        try {
-            File file = new File("activeOrders.txt");
-            FileWriter fw = new FileWriter(file, true);
-            BufferedWriter bw = new BufferedWriter(fw);
-
-            bw.newLine();
-            bw.write(order.toString());
-            bw.flush();
-
-            bw.close();
-            fw.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public void removeOrder(Order order) {
-        try {
-
-            File file = new File("activeOrders.txt");
-            FileReader fr = new FileReader(file);
-            BufferedReader br = new BufferedReader(fr);
-
-            StringBuffer sb = new StringBuffer();
-
-            String line;
-            while ((line = br.readLine()) != null) {
-
-                if (!line.isEmpty()) {
-                    int thisInt = Character.getNumericValue((char) line.charAt(0));
-
-                    if (thisInt != order.getOrderNumber()) {
-                        sb.append(line + "\n");
-                    }
-                }
-            }
-
-            br.close();
-            fr.close();
-
-            FileWriter fw = new FileWriter(file);
-            fw.write(sb.toString());
-            fw.flush();
-
-            fw.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void writeStatistic(Order order) {
-        try {
-            File file = new File("finishedOrders.txt");
-            FileWriter fw = new FileWriter(file, true);
-            BufferedWriter bw = new BufferedWriter(fw);
-
-            bw.newLine();
-            bw.write(order.toString());
-            bw.flush();
-
-            bw.close();
-            fw.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-     */
 }

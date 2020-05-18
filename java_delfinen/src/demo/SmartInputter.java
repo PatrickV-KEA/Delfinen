@@ -1,3 +1,11 @@
+/**
+ * Takes a variable like string "date=00/00/0000".
+ * Splits it at '=' so it becomes String[] ["date","00/00/0000"].
+ * Index 0 is Variable name, and index 1 is Value.
+ * If variable name has been conditioned, converts and inputs value.
+ *
+ * @author Patrick
+ */
 package demo;
 
 import java.time.LocalDate;
@@ -5,35 +13,34 @@ import java.time.format.DateTimeFormatter;
 
 public class SmartInputter {
 
+    // -------------------------------------------------------------------------------------------------
+    // BEHAVIOR METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // -------------------------------------------------------------------------------------------------
     public void input(Member member, String str) {
-
         if (!str.isEmpty()) {
-            // takes notation "id=1" where '=' is split and left/right operands are checked
-            String attr = str.split("=")[0];
-            String arg = str.split("=")[1];
+            String var = str.split("=")[0];
+            String val = str.split("=")[1];
 
-            if (attr.equals("id")) { member.setMemberNr(Integer.parseInt(arg));
-            } else if (attr.equals("name")) { member.setName(arg);
-            } else if (attr.equals("date")) { member.setBirthday(LocalDate.parse(arg, DateTimeFormatter.ofPattern("dd/MM/yyyy")));
-            } else if (attr.equals("cpr")) { member.setCpr(Integer.parseInt(arg));
-            } else if (attr.equals("paid")) { member.setPayed(Boolean.parseBoolean(arg));
-            } else if (attr.equals("active")) { member.setActive(Boolean.parseBoolean(arg));
-            } else if (attr.equals("discipline")) { member.setDiscipline(arg);
-            } else if (attr.equals("time")) { member.setBestTime(Float.parseFloat(arg));
+            if (var.equals("id")) { member.setMemberNr(Integer.parseInt(val));
+            } else if (var.equals("name")) { member.setName(val);
+            } else if (var.equals("date")) { member.setBirthday(LocalDate.parse(val, DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+            } else if (var.equals("cpr")) { member.setCpr(Integer.parseInt(val));
+            } else if (var.equals("paid")) { member.setPayed(Boolean.parseBoolean(val));
+            } else if (var.equals("active")) { member.setActive(Boolean.parseBoolean(val));
+            } else if (var.equals("discipline")) { member.setDiscipline(val);
+            } else if (var.equals("time")) { member.setBestTime(Float.parseFloat(val));
             }
         }
     }
-
     public void input(Tournament tournament, String str) {
         if (!str.isEmpty()) {
-            // takes notation "id=1" where '=' is split and left/right operands are checked
-            String attr = str.split("=")[0];
-            String arg = str.split("=")[1];
+            String var = str.split("=")[0];
+            String val = str.split("=")[1];
 
-            if (attr.equals("name")) { tournament.setName(arg);
-            } else if (attr.equals("result")) { tournament.setResult(Integer.parseInt(arg));
-            } else if (attr.equals("time")) { tournament.setTime(Float.parseFloat(arg));
-            } else if (attr.equals("date")) { tournament.setDate(LocalDate.parse(arg, DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+            if (var.equals("name")) { tournament.setName(val);
+            } else if (var.equals("result")) { tournament.setResult(Integer.parseInt(val));
+            } else if (var.equals("time")) { tournament.setTime(Float.parseFloat(val));
+            } else if (var.equals("date")) { tournament.setDate(LocalDate.parse(val, DateTimeFormatter.ofPattern("dd/MM/yyyy")));
             }
         }
     }
