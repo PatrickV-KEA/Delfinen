@@ -21,14 +21,15 @@ public class SmartInputter {
             String var = str.split("=")[0];
             String val = str.split("=")[1];
 
-            if (var.equals("id")) { member.setId(Integer.parseInt(val));
-            } else if (var.equals("name")) { member.setName(val);
-            } else if (var.equals("date")) { member.setBirthday(LocalDate.parse(val, DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-            } else if (var.equals("cpr")) { member.setCpr(Integer.parseInt(val));
-            } else if (var.equals("paid")) { member.setPaid(Boolean.parseBoolean(val));
-            } else if (var.equals("active")) { member.setActive(Boolean.parseBoolean(val));
-            } else if (var.equals("discipline")) { member.setDiscipline(val);
-            } else if (var.equals("time")) { member.setBestTime(Float.parseFloat(val));
+            switch (var) {
+                case "id":          member.setId(Integer.parseInt(val));                                                    break;
+                case "name":        member.setName(val);                                                                    break;
+                case "date":        member.setBirthday(LocalDate.parse(val, DateTimeFormatter.ofPattern("dd-MM-yyyy")));    break;
+                case "cpr":         member.setCpr(Integer.parseInt(val));                                                   break;
+                case "paid":        member.setPaid(Boolean.parseBoolean(val));                                              break;
+                case "active":      member.setActive(Boolean.parseBoolean(val));                                            break;
+                case "discipline":  member.setDiscipline(val);                                                              break;
+                case "time":        member.setBestTime(Float.parseFloat(val));                                              break;
             }
         }
     }
@@ -37,10 +38,11 @@ public class SmartInputter {
             String var = str.split("=")[0];
             String val = str.split("=")[1];
 
-            if (var.equals("name")) { tournament.setName(val);
-            } else if (var.equals("result")) { tournament.setResult(Integer.parseInt(val));
-            } else if (var.equals("time")) { tournament.setTime(Float.parseFloat(val));
-            } else if (var.equals("date")) { tournament.setDate(LocalDate.parse(val, DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+            switch (var) {
+                case "name":    tournament.setName(val);                                                                break;
+                case "result":  tournament.setResult(Integer.parseInt(val));                                            break;
+                case "time":    tournament.setTime(Float.parseFloat(val));                                              break;
+                case "date":    tournament.setDate(LocalDate.parse(val, DateTimeFormatter.ofPattern("dd-MM-yyyy")));    break;
             }
         }
     }
