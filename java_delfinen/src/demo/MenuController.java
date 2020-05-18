@@ -14,8 +14,8 @@ public class MenuController {
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
     private UI ui = new UI();
-    private FileReader fileReader = new FileReader();
-    private ArrayList<Member> members = fileReader.getMembersList() ;  // det her skal kigges efter.....
+    private MemberFileReader memberFileReader = new MemberFileReader();
+    private ArrayList<Member> members = memberFileReader.getMembersList() ;  // det her skal kigges efter.....
     private MenuBoard menuBoard = new MenuBoard(members);
     private MenuCoach menuCoach = new MenuCoach(members);
     private MenuEconomics menuEconomics = new MenuEconomics(members);
