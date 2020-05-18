@@ -1,13 +1,12 @@
-package demo;
-
-import java.util.ArrayList;
-import java.util.logging.FileHandler;
-
 /**
  *
  * @author Adam
  *
  */
+package demo;
+
+import java.util.ArrayList;
+import java.util.logging.FileHandler;
 
 public class MenuController {
     // -------------------------------------------------------------------------------------------------

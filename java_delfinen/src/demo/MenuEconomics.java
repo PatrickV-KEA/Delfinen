@@ -1,18 +1,17 @@
-package demo;
-
-import java.util.ArrayList;
-
 /**
  *
  * @author Adam
  *
  */
+package demo;
+
+import java.util.ArrayList;
 
 public class MenuEconomics {
 
     private UI ui = new UI();
     private ArrayList<Member> members;
-    private Economics economics;// = new Economics(members); //ved ikke om dette er den rigtige løsning?? patrick???
+    private Economics economics;
 
     public MenuEconomics(ArrayList<Member> members) {
         this.members = members;
