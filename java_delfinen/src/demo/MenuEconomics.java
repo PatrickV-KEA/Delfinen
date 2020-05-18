@@ -2,12 +2,24 @@ package demo;
 
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Adam
+ *
+ */
+
 public class MenuEconomics {
 
-    UI ui = new UI();
+    private UI ui = new UI();
+    private ArrayList<Member> members;
+    private Economics economics;// = new Economics(members); //ved ikke om dette er den rigtige løsning?? patrick???
 
+    public MenuEconomics(ArrayList<Member> members) {
+        this.members = members;
+        economics = new Economics(members);
+    }
 
-    public void menu(ArrayList<Member> members) {
+    public void menu() {
         ui.printString("Du har nu følgende muligheder");
         ui.printString("Tryk 1 For restance listen");
         ui.printString("Tryk 2 For medlemslisten");
@@ -19,11 +31,11 @@ public class MenuEconomics {
             switch (ui.scannerInt()) {
                 case 1:
                     //restance liste
-
+                    economics.printMemberArrears();
                     break;
                 case 2:
                     //medlemsliste
-
+                    economics.printMemberList();
                     break;
                 case 3:
                     //opdater info
@@ -31,20 +43,17 @@ public class MenuEconomics {
                     break;
                 case 4:
                     //indkriv betaling
-
+                    //economics.changePaymentStatus();
                     break;
                 case 5:
                     //se samlede kontingent
-
+                    economics.getTotalContingent();
                     break;
                 default:
                     throw new IllegalArgumentException();
             }
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
-
-
         }
-
     }
 }
