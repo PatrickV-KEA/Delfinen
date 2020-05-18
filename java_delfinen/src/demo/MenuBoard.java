@@ -5,12 +5,13 @@ package demo;
  *
  */
 import java.time.LocalDate;
+import java.util.ArrayList;
 
-public class BoardMenu {
+public class MenuBoard {
     UI ui = new UI();
 
 
-    public void menu() {
+    public void menu(ArrayList<Member> members) {
         String name;
         LocalDate birthday;
         int cpr;
@@ -71,6 +72,7 @@ public class BoardMenu {
             }
         } while (!validAnswer2);
 
-        new Member(name,birthday,cpr,payed,active);
+        Member member = new Member(name,birthday,cpr,payed,active);
+        members.add(member);
     }
 }

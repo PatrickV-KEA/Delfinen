@@ -1,11 +1,13 @@
 package demo;
 
-public class EconomicsMenu {
+import java.util.ArrayList;
+
+public class MenuEconomics {
 
     UI ui = new UI();
 
 
-    public void menu() {
+    public void menu(ArrayList<Member> members) {
         ui.printString("Du har nu følgende muligheder");
         ui.printString("Tryk 1 For restance listen");
         ui.printString("Tryk 2 For medlemslisten");
