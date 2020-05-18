@@ -9,16 +9,12 @@ import java.util.ArrayList;
 public class Economics {
 
     private UI ui = new UI();
-<<<<<<< HEAD
-    ArrayList<Member> memberList = memberFileReader.getMembersList();
     private Members members = new Members();
-=======
     private ArrayList<Member> memberList;
 
     public Economics(ArrayList<Member> memberList) {
         this.memberList = memberList;
     }
->>>>>>> adebb39e23e523a01f7ecd6151508e7054542b33
 
     public void printMemberArrears() {
         Member member;
