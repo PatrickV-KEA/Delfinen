@@ -120,6 +120,34 @@ public class CoachTeams {
         }
     }
 
+    /*public ArrayList<ArrayList> juniorTeams() {
+        ArrayList<String> iter = new ArrayList<>(4);
+        iter.add("Crawl"); iter.add("Rygcrawl"); iter.add("Butterfly"); iter.add("Brystsvømning");
+
+        ArrayList<Member> membersList = members.getMembersList();
+        ArrayList<ArrayList> teams = new ArrayList<>(4);
+
+        for (String s : iter) {
+            ArrayList<Member> team = new ArrayList<>();
+            for (Member member : membersList) {
+                String disc = member.getDiscipline();
+                int age = member.getAge();
+
+                if (disc != null) {
+                    if (disc.equals(s) && age < 18) {
+                        team.add(member);
+                    }
+                }
+            }  // END OF FOR-LOOP
+            teams.add(team);
+        }  // END OF FOR-LOOP
+
+        ArrayList<ArrayList> pack = new ArrayList<>();
+        pack.add(iter); pack.add(teams);
+
+        return pack;
+    }*/
+
     public void juniorTeams() {
         ArrayList<Member> crawl = new ArrayList<>();
         ArrayList<Member> backCrawl = new ArrayList<>();
@@ -133,7 +161,7 @@ public class CoachTeams {
                 if (disc.equals("Krawl") && age < 18) {
                     crawl.add(members.getMembersList().get(i));
                 }
-                if (disc.equals("Rygcrawl") && age < 18) {
+                if (disc.equals("Rygkrawl") && age < 18) {
                     backCrawl.add(members.getMembersList().get(i));
                 }
                 if (disc.equals("Butterfly") && age < 18) {
