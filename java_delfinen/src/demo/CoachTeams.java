@@ -8,9 +8,12 @@ import java.util.Collections;
 public class CoachTeams {
 
     private UI ui = new UI();
-    private Members members = new Members();
-    private ArrayList<Member> memberList;
+    private Members members;
     private MemberFileWriter memberFileWriter = new MemberFileWriter();
+
+    public CoachTeams(Members members) {
+        this.members = members;
+    }
 
     public void chooseMember() {
         Member member;
@@ -120,24 +123,28 @@ public class CoachTeams {
         ArrayList<Member> butterfly = new ArrayList<>();
         ArrayList<Member> breast = new ArrayList<>();
 
-        for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).getDiscipline() == "Crawl" && memberList.get(i).getAge() < 18) {
-                crawl.add(memberList.get(i));
+        for (int i = 0; i < members.getMembersList().size(); i++) {
+            String disc = members.getMembersList().get(i).getDiscipline();
+            int age = members.getMembersList().get(i).getAge();
+            System.out.println(disc);
+            System.out.println(age);
+            if (disc.equals("Krawl") && age < 18) {
+                crawl.add(members.getMembersList().get(i));
             }
-            if (memberList.get(i).getDiscipline() == "Cygcrawl"&& memberList.get(i).getAge() < 18) {
-                backCrawl.add(memberList.get(i));
+            if (disc.equals("Rygkrawl") && age < 18) {
+                backCrawl.add(members.getMembersList().get(i));
             }
-            if (memberList.get(i).getDiscipline() == "Butterfly"&& memberList.get(i).getAge() < 18) {
-                butterfly.add(memberList.get(i));
+            if (disc.equals("Butterfly") && age < 18) {
+                butterfly.add(members.getMembersList().get(i));
             }
-            if (memberList.get(i).getDiscipline() == "Brystsvømning"&& memberList.get(i).getAge() < 18) {
-                breast.add(memberList.get(i));
+            if (disc.equals("Brystsvømning") && age < 18) {
+                breast.add(members.getMembersList().get(i));
             }
         }
         ui.printString("Crawl holdet:");
         ui.printArraylist(crawl);
         ui.printString("");
-        ui.printString("Rygrawl holdet:");
+        ui.printString("Rygcrawl holdet:");
         ui.printArraylist(backCrawl);
         ui.printString("");
         ui.printString("Butterfly holdet:");
@@ -154,18 +161,18 @@ public class CoachTeams {
         ArrayList<Member> butterfly = new ArrayList<>();
         ArrayList<Member> breast = new ArrayList<>();
 
-        for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).getDiscipline() == "Crawl" && memberList.get(i).getAge() > 18) {
-                crawl.add(memberList.get(i));
+        for (int i = 0; i < members.getMembersList().size(); i++) {
+            if (members.getMembersList().get(i).getDiscipline().equals("Krawl") && members.getMembersList().get(i).getAge() > 18) {
+                crawl.add(members.getMembersList().get(i));
             }
-            if (memberList.get(i).getDiscipline() == "Rygcrawl"&& memberList.get(i).getAge() > 18) {
-                backCrawl.add(memberList.get(i));
+            if (members.getMembersList().get(i).getDiscipline().equals("Rygkrawl") && members.getMembersList().get(i).getAge() > 18) {
+                backCrawl.add(members.getMembersList().get(i));
             }
-            if (memberList.get(i).getDiscipline() == "Butterfly"&& memberList.get(i).getAge() > 18) {
-                butterfly.add(memberList.get(i));
+            if (members.getMembersList().get(i).getDiscipline().equals("Butterfly") && members.getMembersList().get(i).getAge() > 18) {
+                butterfly.add(members.getMembersList().get(i));
             }
-            if (memberList.get(i).getDiscipline() == "Brystsvømning"&& memberList.get(i).getAge() > 18) {
-                breast.add(memberList.get(i));
+            if (members.getMembersList().get(i).getDiscipline().equals("Brystsvømning") && members.getMembersList().get(i).getAge() > 18) {
+                breast.add(members.getMembersList().get(i));
             }
         }
         ui.printString("Crawl holdet:");
@@ -188,28 +195,28 @@ public class CoachTeams {
         ArrayList<Member> butterfly = new ArrayList<>();
         ArrayList<Member> breast = new ArrayList<>();
 
-        for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).getDiscipline() == "Crawl" && memberList.get(i).getAge() < 18) {
-                crawl.add(memberList.get(i));
+        for (int i = 0; i < members.getMembersList().size(); i++) {
+            if (members.getMembersList().get(i).getDiscipline().equals("Krawl") && members.getMembersList().get(i).getAge() < 18) {
+                crawl.add(members.getMembersList().get(i));
             }
-            if (memberList.get(i).getDiscipline() == "Rygcrawl" && memberList.get(i).getAge() < 18) {
-                backCrawl.add(memberList.get(i));
+            if (members.getMembersList().get(i).getDiscipline().equals("Rygkrawl") && members.getMembersList().get(i).getAge() < 18) {
+                backCrawl.add(members.getMembersList().get(i));
             }
-            if (memberList.get(i).getDiscipline() == "Butterfly" && memberList.get(i).getAge() < 18) {
-                butterfly.add(memberList.get(i));
+            if (members.getMembersList().get(i).getDiscipline().equals("Butterfly") && members.getMembersList().get(i).getAge() < 18) {
+                butterfly.add(members.getMembersList().get(i));
             }
-            if (memberList.get(i).getDiscipline() == "Brystsvømning" && memberList.get(i).getAge() < 18) {
-                breast.add(memberList.get(i));
+            if (members.getMembersList().get(i).getDiscipline().equals("Brystsvømning") && members.getMembersList().get(i).getAge() < 18) {
+                breast.add(members.getMembersList().get(i));
             }
         }
         Collections.sort(crawl);
         Collections.sort(backCrawl);
         Collections.sort(butterfly);
         Collections.sort(breast);
-        crawl.subList(5, crawl.size()).clear();
+        /*crawl.subList(5, crawl.size()).clear();
         backCrawl.subList(5, backCrawl.size()).clear();
         butterfly.subList(5, butterfly.size()).clear();
-        breast.subList(5, breast.size()).clear();
+        breast.subList(5, breast.size()).clear();*/
         ui.printString("Junior Top 5 i Crawl:");
         ui.printArraylist(crawl);
         ui.printString("");
@@ -230,28 +237,28 @@ public class CoachTeams {
         ArrayList<Member> butterfly = new ArrayList<>();
         ArrayList<Member> breast = new ArrayList<>();
 
-        for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).getDiscipline() == "Crawl" && memberList.get(i).getAge() > 18) {
-                crawl.add(memberList.get(i));
+        for (int i = 0; i < members.getMembersList().size(); i++) {
+            if (members.getMembersList().get(i).getDiscipline().equals("Krawl") && members.getMembersList().get(i).getAge() > 18) {
+                crawl.add(members.getMembersList().get(i));
             }
-            if (memberList.get(i).getDiscipline() == "Rygcrawl" && memberList.get(i).getAge() > 18) {
-                backCrawl.add(memberList.get(i));
+            if (members.getMembersList().get(i).getDiscipline().equals("Rygkrawl") && members.getMembersList().get(i).getAge() > 18) {
+                backCrawl.add(members.getMembersList().get(i));
             }
-            if (memberList.get(i).getDiscipline() == "Butterfly" && memberList.get(i).getAge() > 18) {
-                butterfly.add(memberList.get(i));
+            if (members.getMembersList().get(i).getDiscipline().equals("Butterfly") && members.getMembersList().get(i).getAge() > 18) {
+                butterfly.add(members.getMembersList().get(i));
             }
-            if (memberList.get(i).getDiscipline() == "Brystsvømning" && memberList.get(i).getAge() > 18) {
-                breast.add(memberList.get(i));
+            if (members.getMembersList().get(i).getDiscipline().equals("Brystsvømning") && members.getMembersList().get(i).getAge() > 18) {
+                breast.add(members.getMembersList().get(i));
             }
         }
         Collections.sort(crawl);
         Collections.sort(backCrawl);
         Collections.sort(butterfly);
         Collections.sort(breast);
-        crawl.subList(5, crawl.size()).clear();
+        /*crawl.subList(5, crawl.size()).clear();
         backCrawl.subList(5, backCrawl.size()).clear();
         butterfly.subList(5, butterfly.size()).clear();
-        breast.subList(5, breast.size()).clear();
+        breast.subList(5, breast.size()).clear();*/
         ui.printString("Senior Top 5 i Crawl:");
         ui.printArraylist(crawl);
         ui.printString("");
@@ -265,7 +272,7 @@ public class CoachTeams {
         ui.printArraylist(breast);
         ui.printString("");
     }
-
+    
 
 
 }

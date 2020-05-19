@@ -5,11 +5,12 @@ package demo;
 
 public class MenuCoach {
     private Members members;
-    private CoachTeams coachTeams = new CoachTeams();
-    UI ui = new UI();
+    private CoachTeams coachTeams;
+    private UI ui = new UI();
 
     public MenuCoach(Members members) {
         this.members = members;
+        this.coachTeams = new CoachTeams(members);
     }
 
     public void menu() {
@@ -27,7 +28,7 @@ public class MenuCoach {
                 switch (ui.scannerInt()) {
                     case 1:
                         //se medlemsliste
-                        members.getMembersList();
+                        ui.printArraylist(members.getMembersList());
                         break;
 
                     case 2:

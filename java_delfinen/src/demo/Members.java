@@ -10,14 +10,15 @@ public class Members {
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
     private MemberFileReader memberFileReader = new MemberFileReader();
+    private MemberFileWriter memberFileWriter = new MemberFileWriter();
     private ArrayList<Member> membersList = memberFileReader.getMembersList();
 
     // -------------------------------------------------------------------------------------------------
     // BEHAVIOR METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
     public void addMember(Member member) {
-
         membersList.add(member);
+        memberFileWriter.updateMembers(membersList);
     }
 
     public Member getMemberFromNumber(int number) {
@@ -30,7 +31,6 @@ public class Members {
     }
 
     public ArrayList<Member> getMembersList() {
-
         return membersList;
     }
 }
