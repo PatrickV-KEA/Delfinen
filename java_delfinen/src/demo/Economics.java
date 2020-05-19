@@ -4,6 +4,7 @@ package demo;
  * @author kasper
  *
  */
+import java.io.FileWriter;
 import java.util.ArrayList;
 
 public class Economics {
@@ -11,6 +12,7 @@ public class Economics {
     private UI ui = new UI();
     private Members members = new Members();
     private ArrayList<Member> memberList;
+    private MemberFileWriter memberFileWriter = new MemberFileWriter();
 
     public Economics(ArrayList<Member> memberList) {
         this.memberList = memberList;
@@ -77,10 +79,9 @@ public class Economics {
         //Update
     }
 
-    /*public void changePaymentStatus(){
+    public void changePaymentStatus(){
         Member member;
         ui.printArraylist(memberList);
-
         try {
             while (true) {
                 ui.clear();
@@ -95,6 +96,10 @@ public class Economics {
                     ui.scannerLine();
                     ui.clear();
                 } else {
+                    ui.printString(member.toString());
+                    member.setPaid(!member.isPaid());
+                    ui.printString(member.toString());
+                    memberFileWriter.updateMembers(memberList);
                     break;
                 }
             }
@@ -103,7 +108,7 @@ public class Economics {
             ui.printString("Dette medlemsnummer findes ikke...");
         }
 
-    }*/
+    }
 
 
 
