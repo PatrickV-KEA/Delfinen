@@ -20,7 +20,7 @@ public class CoachTeams {
                 ui.printArraylist(members.getMembersList());
                 ui.printString("Tilføj en svømmer til et hold: ");
                 ui.print("\nAngiv medlemsnummer >>");
-
+                ui.print("");
                 int number = ui.scannerInt();
                 member = members.getMemberFromNumber(number);
                 if (member == null) {
@@ -28,8 +28,9 @@ public class CoachTeams {
                     ui.scannerLine();
                     ui.clear();
                 } else {
+                    ui.print(member.toString());
                     assignSwimmer(member);
-                    memberFileWriter.updateMembers(members.getMembersList());
+                    ui.printString(member.toString());
                 break; }
             }
         } catch (IllegalArgumentException e) {
@@ -40,9 +41,8 @@ public class CoachTeams {
     public void assignSwimmer(Member member) {
         Boolean condition = true;
         while (condition) {
-            ui.clear();
             ui.printString("\nVælg Disciplin:");
-            ui.printString("    1-[Butterfly]\n    2-[Crawl]\n    3-[Rygcrawl]\n    4-[Brystsvømning]\n    0-[annuller]");
+            ui.printString("    1-[Butterfly]\n    2-[Crawl]\n    3-[Rygcrawl]\n    4-[Brystsvømning]\n    5-[Angiv ingen disciplin]\n    0-[annuller]");
             ui.print(">>");
 
             switch (ui.scannerInt()) {
@@ -51,15 +51,28 @@ public class CoachTeams {
                     break;
                 case 1:
                     member.setDiscipline("Butterfly");
+                    memberFileWriter.updateMembers(members.getMembersList());
+                    condition = false;
                     break;
                 case 2:
                     member.setDiscipline("Crawl");
+                    memberFileWriter.updateMembers(members.getMembersList());
+                    condition = false;
                     break;
                 case 3:
                     member.setDiscipline("Rygcrawl");
+                    memberFileWriter.updateMembers(members.getMembersList());
+                    condition = false;
                     break;
                 case 4:
                     member.setDiscipline("Bystsvømning");
+                    memberFileWriter.updateMembers(members.getMembersList());
+                    condition = false;
+                    break;
+                case 5:
+                    member.setDiscipline(null);
+                    memberFileWriter.updateMembers(members.getMembersList());
+                    condition = false;
                     break;
             }
 
