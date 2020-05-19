@@ -29,6 +29,8 @@ public class MenuCoach {
                     case 1:
                         //se medlemsliste
                         ui.printArraylist(members.getMembersList());
+                        ui.printString("\nTryk enter for menu");
+                        ui.scannerLine();
                         break;
 
                     case 2:
@@ -38,6 +40,9 @@ public class MenuCoach {
 
                         ui.printString("\nSenior hold: \n");
                         coachTeams.seniorTeams();
+
+                        ui.printString("\nTryk enter for menu");
+                        ui.scannerLine();
                         break;
                     case 3:
                         //tilføj svømmer til hold
@@ -46,6 +51,8 @@ public class MenuCoach {
                     case 4:
                         //ændre resultat for svømmer
                         coachTeams.editResult();
+                        ui.printString("\nTryk enter for menu");
+                        ui.scannerLine();
                         break;
                     case 5:
                         //se top 5
@@ -54,6 +61,9 @@ public class MenuCoach {
 
                         ui.printString("\nSenior: \n");
                         coachTeams.topFiveSenior();
+
+                        ui.printString("\nTryk enter for menu");
+                        ui.scannerLine();
                         break;
                     case 0:
                         //tilbage til hovedmenuen
