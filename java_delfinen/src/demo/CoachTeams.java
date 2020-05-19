@@ -18,19 +18,23 @@ public class CoachTeams {
             while (true) {
                 ui.clear();
                 ui.printArraylist(members.getMembersList());
-                ui.printString("Tilføj en svømmer til et hold: ");
+                ui.printString("Tilføj et medlem til et hold: ");
                 ui.print("\nAngiv medlemsnummer >>");
-                ui.print("");
+
                 int number = ui.scannerInt();
+                ui.printString("");
                 member = members.getMemberFromNumber(number);
                 if (member == null) {
                     ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >>");
                     ui.scannerLine();
                     ui.clear();
                 } else {
+                    ui.printString("Medlem valgt:");
                     ui.print(member.toString());
                     assignSwimmer(member);
+                    ui.printString("\nDisciplin ændret:");
                     ui.printString(member.toString());
+
                 break; }
             }
         } catch (IllegalArgumentException e) {
@@ -80,10 +84,33 @@ public class CoachTeams {
     }
 
     public void editResult(){
+        Member member;
+        try {
+            while (true) {
+                ui.clear();
+                ui.printArraylist(members.getMembersList());
+                ui.printString("Ændre svømmer resultat: ");
+                ui.print("\nAngiv medlemsnummer >>");
 
-        //chooseMember(memberList).setBestTime(ui.scannerInt());
-
-
+                int number = ui.scannerInt();
+                ui.printString("");
+                member = members.getMemberFromNumber(number);
+                if (member == null) {
+                    ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >>");
+                    ui.scannerLine();
+                    ui.clear();
+                } else {
+                    ui.printString("Medlem valgt:");
+                    ui.print(member.toString());
+                    ui.printString("Angiv ny tid:");
+                    int time = ui.scannerInt();
+                    member.setBestTime(time);
+                    ui.printString(member.toString());
+                    break; }
+            }
+        } catch (IllegalArgumentException e) {
+            ui.printString("Dette medlemsnummer findes ikke...");
+        }
     }
 
     public void juniorTeams () {
