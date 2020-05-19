@@ -106,5 +106,7 @@ public class Economics {
 
     }
 
+    public void resetYear();
+
 
 }

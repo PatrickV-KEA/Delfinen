@@ -23,6 +23,7 @@ public class MenuEconomics {
         ui.printString("Tryk 3 For Opdatere et medlems informationer");
         ui.printString("tryk 4 for at indskrive en betaling   ");
         ui.printString("Tryk 5 for årest samlede kontingent");
+        ui.printString("Tryk 6 for at starte nyt betalingsår");
         ui.printString("Tryk 0 for at vende tilbage til hovedmenuen");
         ui.print(">>");
         try {
@@ -46,6 +47,10 @@ public class MenuEconomics {
                 case 5:
                     //se samlede kontingent
                     economics.getTotalContingent();
+                    break;
+                case 6:
+                    //start nyt betalingsår
+                    economics.resetYear();
                     break;
                 case 0:
                     //tilbage til hovedmenuen
