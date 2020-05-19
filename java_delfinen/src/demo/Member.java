@@ -14,6 +14,7 @@ public class Member implements Comparable<Member> {
     // -------------------------------------------------------------------------------------------------
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
+    private static int count = 0;
     private int id;
     private String name;
     private LocalDate birthday;
@@ -28,9 +29,13 @@ public class Member implements Comparable<Member> {
     // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
     public Member() {
+        count += 1;
+        this.id = count;
     }
 
     public Member(String name, LocalDate birthday, int cpr, boolean paid, boolean active) {
+        count += 1;
+        this.id = count;
         this.name = name;
         this.birthday = birthday;
         this.cpr = cpr;
@@ -39,6 +44,7 @@ public class Member implements Comparable<Member> {
     }
 
     public Member(int id, String name, LocalDate birthday, int cpr, boolean paid, boolean active) {
+        count += 1;
         this.id = id;
         this.name = name;
         this.birthday = birthday;
@@ -48,6 +54,7 @@ public class Member implements Comparable<Member> {
     }
 
     public Member(int id, String name, LocalDate birthday, int cpr, boolean paid, boolean active, String discipline, float bestTime) {
+        count += 1;
         this.id = id;
         this.name = name;
         this.birthday = birthday;
