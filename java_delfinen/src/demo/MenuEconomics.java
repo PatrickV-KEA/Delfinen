@@ -20,7 +20,7 @@ public class MenuEconomics {
             ui.printString("Du har nu følgende muligheder");
             ui.printString("Tryk 1 For restance listen");
             ui.printString("Tryk 2 For medlemslisten");
-            ui.printString("Tryk 3 For Opdatere et medlems informationer");
+            ui.printString("Tryk 3 For at ændre aktiv staus hos et medlem");
             ui.printString("tryk 4 for at indskrive en betaling   ");
             ui.printString("Tryk 5 for årest samlede kontingent");
             ui.printString("Tryk 6 for at starte nyt betalingsår");
@@ -41,8 +41,8 @@ public class MenuEconomics {
                         ui.scannerLine();
                         break;
                     case 3:
-                        //opdater info
-
+                        //ændre aktiv status
+                        economics.changeActive();
                         ui.printString("\nTryk enter for menu");
                         ui.scannerLine();
                         break;

@@ -116,5 +116,10 @@ public class Economics {
         memberFileWriter.updateMembers(members.getMembersList());
     }
 
+    public void changeActive(){
+
+
+    }
+
 
 }
