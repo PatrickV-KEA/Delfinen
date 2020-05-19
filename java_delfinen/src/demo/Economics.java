@@ -106,7 +106,12 @@ public class Economics {
 
     }
 
-    public void resetYear();
+    public void resetYear(){
+        for (int i = 0; i < members.getMembersList().size() ; i++) {
+            
+        }
+
+    }
 
 
 }
