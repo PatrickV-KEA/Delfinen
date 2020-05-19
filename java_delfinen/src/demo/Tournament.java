@@ -64,4 +64,14 @@ public class Tournament {
     public void setDate(LocalDate date) {
         this.date = date;
     }
+
+    @Override
+    public String toString() {
+        return "Stævne: " +
+                name + '\'' +
+                ", placering: " + result +
+                ", tid " + time +
+                ", D. " + date +
+                '}';
+    }
 }

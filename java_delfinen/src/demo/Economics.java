@@ -72,10 +72,6 @@ public class Economics {
 
     }
 
-    public void updateInfo() {
-        //Update
-    }
-
     public void changePaymentStatus() {
         Member member;
         try {
@@ -114,6 +110,38 @@ public class Economics {
                 member.setPaid(false);
         }
         memberFileWriter.updateMembers(members.getMembersList());
+    }
+
+    public void changeActive(){
+        Member member;
+        try {
+            while (true) {
+                ui.clear();
+                ui.printArraylist(members.getMembersList());
+                ui.printString("Vælg et medlem for at ændre aktiv/passiv status. ");
+                ui.print("\nAngiv medlemsnummer >>");
+
+                int number = ui.scannerInt();
+                member = members.getMemberFromNumber(number);
+                if (member == null) {
+                    ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >>");
+                    ui.scannerLine();
+                    ui.clear();
+                } else {
+                    ui.printString(member.toString());
+                    member.setActive(!member.isActive());
+                    ui.printString(member.toString());
+                    memberFileWriter.updateMembers(members.getMembersList());
+                    break;
+                }
+            }
+
+        } catch (IllegalArgumentException e) {
+            ui.printString("Dette medlemsnummer findes ikke...");
+        }
+
+
+
     }
 
 
