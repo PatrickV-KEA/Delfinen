@@ -68,7 +68,7 @@ public class Tournament {
     @Override
     public String toString() {
         return "Stævne: " +
-                name + '\'' +
+                name +
                 ", placering: " + result +
                 ", tid " + time +
                 ", D. " + date +
