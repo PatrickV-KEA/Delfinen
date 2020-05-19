@@ -1,20 +1,14 @@
 /**
- *
  * @author Adam
- *
  */
 package demo;
-
-import java.util.ArrayList;
-import java.util.logging.FileHandler;
 
 public class MenuController {
     // -------------------------------------------------------------------------------------------------
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
     private UI ui = new UI();
-    private MemberFileReader memberFileReader = new MemberFileReader();
-    private ArrayList<Member> members = memberFileReader.getMembersList() ;  // det her skal kigges efter.....
+    private Members members = new Members();
     private MenuBoard menuBoard = new MenuBoard(members);
     private MenuCoach menuCoach = new MenuCoach(members);
     private MenuEconomics menuEconomics = new MenuEconomics(members);

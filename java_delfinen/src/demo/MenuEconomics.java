@@ -8,10 +8,10 @@ import java.util.ArrayList;
 public class MenuEconomics {
 
     private UI ui = new UI();
-    private ArrayList<Member> members;
+    private Members members;
     private Economics economics;
 
-    public MenuEconomics(ArrayList<Member> members) {
+    public MenuEconomics(Members members) {
         this.members = members;
         economics = new Economics(members);
     }

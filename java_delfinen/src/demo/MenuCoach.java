@@ -7,13 +7,12 @@ package demo;
 import java.util.ArrayList;
 
 public class MenuCoach {
-    private Members members = new Members();
+    private Members members;
     private CoachTeams coachTeams = new CoachTeams();
     UI ui = new UI();
-    ArrayList<Member> membersList;
 
-    public MenuCoach(ArrayList<Member> membersList) {
-        this.membersList = membersList;
+    public MenuCoach(Members members) {
+        this.members = members;
     }
 
     public void menu() {
