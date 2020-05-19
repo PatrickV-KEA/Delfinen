@@ -102,10 +102,11 @@ public class CoachTeams {
                 } else {
                     ui.printString("Medlem valgt:");
                     ui.print(member.toString());
-                    ui.printString("Angiv ny tid:");
+                    ui.printString("\nAngiv ny tid:");
                     int time = ui.scannerInt();
                     member.setBestTime(time);
                     ui.printString(member.toString());
+                    memberFileWriter.updateMembers(members.getMembersList());
                     break; }
             }
         } catch (IllegalArgumentException e) {
