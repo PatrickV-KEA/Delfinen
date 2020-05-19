@@ -3,8 +3,6 @@
  */
 package demo;
 
-import java.util.ArrayList;
-
 public class MenuEconomics {
 
     private UI ui = new UI();

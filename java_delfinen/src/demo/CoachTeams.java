@@ -17,13 +17,12 @@ public class CoachTeams {
         try {
             while (true) {
                 ui.clear();
-                ui.printArraylist(memberList);
+                ui.printArraylist(members.getMembersList());
                 ui.printString("Tilføj en svømmer til et hold: ");
                 ui.print("\nAngiv medlemsnummer >>");
 
                 int number = ui.scannerInt();
                 member = members.getMemberFromNumber(number);
-
                 if (member == null) {
                     ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >>");
                     ui.scannerLine();

@@ -3,9 +3,6 @@
  */
 package demo;
 
-
-import java.util.ArrayList;
-
 public class MenuCoach {
     private Members members;
     private CoachTeams coachTeams = new CoachTeams();
@@ -48,7 +45,7 @@ public class MenuCoach {
                     break;
                 case 3:
                     //tilføj svømmer til hold
-
+                    coachTeams.chooseMember();
                     break;
                 case 4:
                     //ændre resultat for svømmer
