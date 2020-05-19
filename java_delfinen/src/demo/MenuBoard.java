@@ -25,13 +25,13 @@ public class MenuBoard {
     public void menu() {
         boolean condition = true;
         while (condition) {
-            ui.print("Tast 0 for hovedmenu\nTast 1 for at tilføje et medlem\n>>");
+            ui.print("Tast 1 for at tilføje et medlem\nTast 0 for hovedmenu\n>>");
             switch (ui.scannerInt()) {
-                case 0:
-                    condition = false;
-                    break;
                 case 1:
                     members.addMember(createMember());
+                    break;
+                case 0:
+                    condition = false;
                     break;
             }
         }
