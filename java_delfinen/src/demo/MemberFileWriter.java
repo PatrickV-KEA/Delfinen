@@ -5,8 +5,7 @@
  */
 package demo;
 
-import java.io.File;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.ArrayList;
 
 public class MemberFileWriter {
@@ -15,18 +14,20 @@ public class MemberFileWriter {
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
     private File file;
+    private File bck;
 
     // -------------------------------------------------------------------------------------------------
     // BEHAVIOR METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
     MemberFileWriter() {
-
+        bck = new File("backup.txt");
         file = new File("Svømmeklub.txt");
     }
     MemberFileWriter(String UnitTest) {
         /**
          * Constructor for UnitTesting, pass any String
          */
+        bck = new File("Test/demo/backup.txt");
         file = new File("Test/demo/Svømmeklub.txt");
     }
 
@@ -48,7 +49,23 @@ public class MemberFileWriter {
     }*/
     public void updateMembers(ArrayList<Member> membersList) {
         try {
-            FileWriter fw = new FileWriter(file, false);
+            // Copy to backup file
+            InputStream is = null;
+            OutputStream os = null;
+            try {
+                is = new FileInputStream(file);
+                os = new FileOutputStream(bck);
+                byte[] buffer = new byte[4096];
+                int length;
+                while ((length = is.read(buffer)) > 0) {
+                    os.write(buffer, 0, length);
+                }
+            } finally {
+                is.close();
+                os.close();
+            }
+            // Write new file
+            FileWriter fw = new FileWriter(file);
             StringBuilder sb = new StringBuilder();
             for (Member member : membersList) {
                 sb.append(member.toFile()).append("\n");
@@ -56,6 +73,9 @@ public class MemberFileWriter {
             fw.write(sb.toString());
             fw.flush();
             fw.close();
+
+            // Delete backup file
+            bck.delete();
         } catch (Exception e) {
             e.printStackTrace();
         }
