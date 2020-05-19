@@ -5,7 +5,6 @@
  */
 package demo;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -34,7 +33,7 @@ public class MemberFileWriter {
     // -------------------------------------------------------------------------------------------------
     // BEHAVIOR METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    public void writeMember(Member member) {
+    /*public void writeMember(Member member) {
         try {
             FileWriter fw = new FileWriter(file, true);
             BufferedWriter bw = new BufferedWriter(fw);
@@ -46,7 +45,7 @@ public class MemberFileWriter {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    }*/
     public void updateMembers(ArrayList<Member> membersList) {
         try {
             FileWriter fw = new FileWriter(file, false);
