@@ -10,6 +10,7 @@ public class CoachTeams {
     private UI ui = new UI();
     private Members members = new Members();
     private ArrayList<Member> memberList;
+    private MemberFileWriter memberFileWriter = new MemberFileWriter();
 
     public void chooseMember() {
         Member member;
@@ -29,6 +30,7 @@ public class CoachTeams {
                     ui.clear();
                 } else {
                     assignSwimmer(member);
+                    memberFileWriter.updateMembers(members.getMembersList());
                 break; }
             }
         } catch (IllegalArgumentException e) {
