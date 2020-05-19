@@ -1,20 +1,28 @@
-package demo;
 /**
- * @author Adam
+ * @author Adam Kasper Patrick
  */
+package demo;
 
 import java.util.ArrayList;
 
 public class Members {
+    // -------------------------------------------------------------------------------------------------
+    // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // -------------------------------------------------------------------------------------------------
     private MemberFileReader memberFileReader = new MemberFileReader();
     private ArrayList<Member> membersList = memberFileReader.getMembersList();
 
+    // -------------------------------------------------------------------------------------------------
+    // BEHAVIOR METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // -------------------------------------------------------------------------------------------------
+    public void addMember(Member member) {
+
+        membersList.add(member);
+    }
+
     public Member getMemberFromNumber(int number) {
-        Member member;
-        for (int i = 0; i < membersList.size(); i++) {
-            int id = membersList.get(i).getId();
-            if (id == number) {
-                member = membersList.get(i);
+        for (Member member : membersList) {
+            if (number == member.getId()) {
                 return member;
             }
         }
@@ -22,10 +30,7 @@ public class Members {
     }
 
     public ArrayList<Member> getMembersList() {
+
         return membersList;
     }
 }
-
-
-
-
