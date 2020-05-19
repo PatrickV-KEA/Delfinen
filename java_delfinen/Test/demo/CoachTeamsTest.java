@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CoachTeamsTest {
 
     @Test
-    void junior() {
+    void juniorTeams() {
 
     }
 }

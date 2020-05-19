@@ -5,8 +5,8 @@ package demo;
 
 public class MenuCoach {
     private Members members;
-    private CoachTeams coachTeams = new CoachTeams();
-    UI ui = new UI();
+    private CoachTeams coachTeams = new CoachTeams(members);
+    private UI ui = new UI();
 
     public MenuCoach(Members members) {
         this.members = members;
