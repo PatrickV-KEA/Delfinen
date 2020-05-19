@@ -9,7 +9,7 @@ id=8 name=Bo date=01-08-2001 cpr=8924 paid=false active=true discipline=Butterfl
 id=9 name=Helle date=01-08-2002 cpr=8924 paid=false active=true discipline=Rygkrawl time=123.0
 id=10 name=Jens date=01-08-2003 cpr=8924 paid=false active=true discipline=Rygkrawl time=142.0
 id=11 name=Marie date=01-08-2004 cpr=8924 paid=false active=true discipline=Rygkrawl time=186.0
-id=12 name=Ole date=01-08-2005 cpr=8924 paid=false active=true discipline=Rygkrawl time=145.0
+id=12 name=Ole date=01-08-2005 cpr=8924 paid=false active=true discipline=Butterfly time=145.0
 id=13 name=Jeanette date=01-08-2006 cpr=8924 paid=false active=true discipline=Rygkrawl time=113.0
 id=14 name=Peter date=01-08-2007 cpr=8924 paid=false active=true discipline=Krawl time=111.0
 id=15 name=Lene date=01-08-2008 cpr=8924 paid=false active=true discipline=Krawl time=112.0
