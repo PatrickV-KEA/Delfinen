@@ -49,7 +49,7 @@ public class MenuCoach {
                     break;
                 case 4:
                     //ændre resultat for svømmer
-
+                    coachTeams.editResult();
                     break;
                 case 5:
                     //se top 5
