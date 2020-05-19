@@ -332,6 +332,7 @@ public class CoachTeams {
                     createTournament(member);
                     ui.printString("Stævne angivet: \n");
                     ui.print(member.toString());
+                    memberFileWriter.updateMembers(members.getMembersList());
                     break;
                 }
             }
@@ -341,7 +342,7 @@ public class CoachTeams {
     }
 
     public void createTournament(Member member){
-        ui.print("Angiv stævne og resultater til svømmer.\nIntast stævne navn: ");
+        ui.print("\nAngiv stævne og resultater til svømmer.\nIntast stævne navn: ");
         String name = ui.scannerString();
 
         ui.print("\nIndtast svømmerens placering: ");
@@ -359,8 +360,9 @@ public class CoachTeams {
         ui.print("\nIndtast år: ");
         int year = ui.scannerInt();
 
-        LocalDate date = LocalDate.of(day, month,year);
-        ui.print("Medlemmet er tilføjet\n\n");
+        LocalDate date = LocalDate.of(year,month,day);
+
+        ui.print("Stævne er tilføjet\n\n");
         member.addTournament(new Tournament(name,result,time,date));
 
     }
