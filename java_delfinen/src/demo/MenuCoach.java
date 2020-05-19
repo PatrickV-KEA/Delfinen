@@ -27,7 +27,7 @@ public class MenuCoach {
                 switch (ui.scannerInt()) {
                     case 1:
                         //se medlemsliste
-                        members.getMembersList();
+                        ui.printArraylist(members.getMembersList());
                         break;
 
                     case 2:
