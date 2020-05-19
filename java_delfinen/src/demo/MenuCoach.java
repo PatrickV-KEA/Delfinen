@@ -48,7 +48,7 @@ public class MenuCoach {
                     break;
                 case 3:
                     //tilføj svømmer til hold
-
+                    coachTeams.chooseMember();
                     break;
                 case 4:
                     //ændre resultat for svømmer
