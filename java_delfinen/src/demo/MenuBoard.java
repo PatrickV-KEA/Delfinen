@@ -4,19 +4,18 @@
 package demo;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class MenuBoard {
     // -------------------------------------------------------------------------------------------------
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
     private UI ui = new UI();
-    private ArrayList<Member> members;
+    private Members members;
 
     // -------------------------------------------------------------------------------------------------
     // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    public MenuBoard(ArrayList<Member> members) {
+    public MenuBoard(Members members) {
         this.members = members;
     }
 
@@ -32,7 +31,7 @@ public class MenuBoard {
                     condition = false;
                     break;
                 case 1:
-                    members.add(createMember());
+                    members.addMember(createMember());
                     break;
             }
         }
@@ -63,6 +62,9 @@ public class MenuBoard {
         boolean active = getYN();
 
         LocalDate birthday = LocalDate.of(year, mouth, day);
+
+        ui.clear();
+        ui.print("Medlemmet er tilføjet\n\n");
         return new Member(name, birthday, cpr, paid, active);
     }
 
