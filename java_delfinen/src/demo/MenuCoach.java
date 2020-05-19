@@ -6,13 +6,13 @@ package demo;
 import java.util.ArrayList;
 
 public class MenuCoach {
-
-    CoachTeams coachTeams = new CoachTeams();
+    private Members members = new Members();
+    private CoachTeams coachTeams = new CoachTeams();
     UI ui = new UI();
-    ArrayList<Member> members;
+    ArrayList<Member> membersList;
 
     public MenuCoach(ArrayList<Member> members) {
-        this.members = members;
+        this.membersList = membersList;
     }
 
     public void menu() {
@@ -34,12 +34,14 @@ public class MenuCoach {
         try {
             switch (ui.scannerInt()) {
                 case 1:
-                    //medlemsliste
-
+                    members.getMembersList();
                     break;
 
                 case 2:
+                    ui.printString("Junior hold: \n");
                     coachTeams.juniorTeams();
+
+                    ui.printString("\nSenior hold: \n");
                     coachTeams.seniorTeams();
                     break;
                 case 3:
@@ -51,8 +53,11 @@ public class MenuCoach {
 
                     break;
                 case 5:
-                    // se top 5
+                    ui.printString("Junior:\n");
+                    coachTeams.topFiveJunior();
 
+                    ui.printString("\nSenior: \n");
+                    coachTeams.topFiveSenior();
                     break;
                 case 0:
                     //tilbage til hovedmenuen
