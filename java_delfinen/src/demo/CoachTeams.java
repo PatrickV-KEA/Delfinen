@@ -11,7 +11,7 @@ public class CoachTeams {
     private Members members = new Members();
     private ArrayList<Member> memberList;
 
-    public Member chooseMember(ArrayList<Member> memberList) {
+    public void chooseMember() {
         Member member;
         try {
             while (true) {
@@ -22,23 +22,19 @@ public class CoachTeams {
 
                 int number = ui.scannerInt();
                 member = members.getMemberFromNumber(number);
+                assignSwimmer(member);
                 if (member == null) {
                     ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >>");
                     ui.scannerLine();
                     ui.clear();
-                } else {
-                    break;
-                }
-                return member;
+                } else { break; }
             }
-
         } catch (IllegalArgumentException e) {
             ui.printString("Dette medlemsnummer findes ikke...");
         }
-    return null;
     }
 
-    public void assignSwimmer() {
+    public void assignSwimmer(Member member) {
         Boolean condition = true;
         while (condition) {
             ui.clear();
@@ -51,16 +47,16 @@ public class CoachTeams {
                     condition = false;
                     break;
                 case 1:
-                    chooseMember(memberList).setDiscipline("Butterfly");
+                    member.setDiscipline("Butterfly");
                     break;
                 case 2:
-                    chooseMember(memberList).setDiscipline("Crawl");
+                    member.setDiscipline("Crawl");
                     break;
                 case 3:
-                    chooseMember(memberList).setDiscipline("Rygcrawl");
+                    member.setDiscipline("Rygcrawl");
                     break;
                 case 4:
-                    chooseMember(memberList).setDiscipline("Bystsvømning");
+                    member.setDiscipline("Bystsvømning");
                     break;
             }
 
@@ -69,7 +65,7 @@ public class CoachTeams {
 
     public void editResult(){
 
-        chooseMember(memberList).setBestTime(ui.scannerInt());
+        //chooseMember(memberList).setBestTime(ui.scannerInt());
 
 
     }
