@@ -3,9 +3,6 @@
  */
 package demo;
 
-
-import java.util.ArrayList;
-
 public class MenuCoach {
     private Members members;
     private CoachTeams coachTeams = new CoachTeams();
