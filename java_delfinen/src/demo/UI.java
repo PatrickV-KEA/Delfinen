@@ -21,6 +21,13 @@ public class UI {
         }
     }
 
+    public void printArraylistFive(ArrayList arrayList) {
+        for (int i = 0;  i < arrayList.size(); i++) {
+           if(i<5)
+            printString(arrayList.get(i).toString());
+        }
+    }
+
     public int scannerInt() {
         int number;
         while (!scan.hasNextInt()) {
