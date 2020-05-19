@@ -23,7 +23,7 @@ public class Economics {
         ArrayList<Member> arrearsList = new ArrayList<>();
 
         for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).isPaid() == false) {
+            if (!memberList.get(i).isPaid()) {
                 member = memberList.get(i);
                 arrearsList.add(member);
             }
@@ -35,7 +35,7 @@ public class Economics {
         int total = 0;
 
         for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).isActive() == false) {
+            if (!memberList.get(i).isActive()) {
                 total = total + 500;
             } else {
                 if (memberList.get(i).getAge() < 18) {
@@ -56,7 +56,7 @@ public class Economics {
         int contingent = 0;
 
         for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).isActive() == false) {
+            if (!memberList.get(i).isActive()) {
                 contingent = 500;
             } else {
                 if (memberList.get(i).getAge() < 18) {
