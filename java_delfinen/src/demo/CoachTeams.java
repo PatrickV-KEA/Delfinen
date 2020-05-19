@@ -124,16 +124,20 @@ public class CoachTeams {
         ArrayList<Member> breast = new ArrayList<>();
 
         for (int i = 0; i < members.getMembersList().size(); i++) {
-            if (members.getMembersList().get(i).getDiscipline().equals("Krawl") && members.getMembersList().get(i).getAge() < 18) {
+            String disc = members.getMembersList().get(i).getDiscipline();
+            int age = members.getMembersList().get(i).getAge();
+            System.out.println(disc);
+            System.out.println(age);
+            if (disc.equals("Krawl") && age < 18) {
                 crawl.add(members.getMembersList().get(i));
             }
-            if (members.getMembersList().get(i).getDiscipline().equals("Rygkrawl") && members.getMembersList().get(i).getAge() < 18) {
+            if (disc.equals("Rygkrawl") && age < 18) {
                 backCrawl.add(members.getMembersList().get(i));
             }
-            if (members.getMembersList().get(i).getDiscipline().equals("Butterfly") && members.getMembersList().get(i).getAge() < 18) {
+            if (disc.equals("Butterfly") && age < 18) {
                 butterfly.add(members.getMembersList().get(i));
             }
-            if (members.getMembersList().get(i).getDiscipline().equals("Brystsvømning") && members.getMembersList().get(i).getAge() < 18) {
+            if (disc.equals("Brystsvømning") && age < 18) {
                 breast.add(members.getMembersList().get(i));
             }
         }
