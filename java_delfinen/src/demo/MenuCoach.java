@@ -3,16 +3,16 @@
  */
 package demo;
 
+
 import java.util.ArrayList;
 
 public class MenuCoach {
-    private Members members = new Members();
+    private Members members;
     private CoachTeams coachTeams = new CoachTeams();
     UI ui = new UI();
-    ArrayList<Member> membersList;
 
-    public MenuCoach(ArrayList<Member> members) {
-        this.membersList = membersList;
+    public MenuCoach(Members members) {
+        this.members = members;
     }
 
     public void menu() {
@@ -28,16 +28,18 @@ public class MenuCoach {
         ui.printString("Tryk 2 For at se holdlist");
         ui.printString("Tryk 3 For at tilføj medlem til svømmehold");
         ui.printString("Tryk 4 For at ændre resultater for medlem");
-        ui.printString("Tryk 5 For at se top bedste svømmere for hver diciplin");
+        ui.printString("Tryk 5 For at se top 5 bedste svømmere for hver diciplin");
         ui.printString("Tryk 0 for at vende tilbage til hovedmenuen");
         ui.print(">> ");
         try {
             switch (ui.scannerInt()) {
                 case 1:
+                    //se medlemsliste
                     members.getMembersList();
                     break;
 
                 case 2:
+                    //se hold liste
                     ui.printString("Junior hold: \n");
                     coachTeams.juniorTeams();
 
@@ -53,6 +55,7 @@ public class MenuCoach {
 
                     break;
                 case 5:
+                    //se top 5
                     ui.printString("Junior:\n");
                     coachTeams.topFiveJunior();
 

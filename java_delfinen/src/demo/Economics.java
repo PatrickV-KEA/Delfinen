@@ -1,28 +1,27 @@
 package demo;
 /**
- *
  * @author kasper
- *
  */
+
 import java.util.ArrayList;
 
 public class Economics {
 
     private UI ui = new UI();
-    private Members members = new Members();
-    private ArrayList<Member> memberList;
+    private Members members;
+    private MemberFileWriter memberFileWriter = new MemberFileWriter();
 
-    public Economics(ArrayList<Member> memberList) {
-        this.memberList = memberList;
+    public Economics(Members members) {
+        this.members = members;
     }
 
     public void printMemberArrears() {
         Member member;
         ArrayList<Member> arrearsList = new ArrayList<>();
 
-        for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).isPaid() == false) {
-                member = memberList.get(i);
+        for (int i = 0; i < members.getMembersList().size(); i++) {
+            if (!members.getMembersList().get(i).isPaid()) {
+                member = members.getMembersList().get(i);
                 arrearsList.add(member);
             }
         }
@@ -32,17 +31,17 @@ public class Economics {
     public void getTotalContingent() {
         int total = 0;
 
-        for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).isActive() == false) {
+        for (int i = 0; i < members.getMembersList().size(); i++) {
+            if (!members.getMembersList().get(i).isActive()) {
                 total = total + 500;
             } else {
-                if (memberList.get(i).getAge() < 18) {
+                if (members.getMembersList().get(i).getAge() < 18) {
                     total = total + 1000;
                 }
-                if (memberList.get(i).getAge() > 18 && memberList.get(i).getAge() < 60) {
+                if (members.getMembersList().get(i).getAge() > 18 && members.getMembersList().get(i).getAge() < 60) {
                     total = total + 1600;
                 }
-                if (memberList.get(i).getAge() > 60) {
+                if (members.getMembersList().get(i).getAge() > 60) {
                     total = total + 1200;
                 }
             }
@@ -50,41 +49,39 @@ public class Economics {
         ui.printString("Total Kontingent: " + total + " kr.");
     }
 
-    public void printMemberList(){
+    public void printMemberList() {
         int contingent = 0;
 
-        for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).isActive() == false) {
+        for (int i = 0; i < members.getMembersList().size(); i++) {
+            if (!members.getMembersList().get(i).isActive()) {
                 contingent = 500;
             } else {
-                if (memberList.get(i).getAge() < 18) {
+                if (members.getMembersList().get(i).getAge() < 18) {
                     contingent = 1000;
                 }
-                if (memberList.get(i).getAge() > 18 && memberList.get(i).getAge() < 60) {
+                if (members.getMembersList().get(i).getAge() > 18 && members.getMembersList().get(i).getAge() < 60) {
                     contingent = 1600;
                 }
-                if (memberList.get(i).getAge() > 60) {
+                if (members.getMembersList().get(i).getAge() > 60) {
                     contingent = 1200;
                 }
             }
 
-            ui.printString("" + memberList.get(i) + " " + contingent + " kr. kontingent.");
+            ui.printString("" + members.getMembersList().get(i) + " " + contingent + " kr. kontingent.");
         }
 
     }
 
-    public void updateInfo(){
+    public void updateInfo() {
         //Update
     }
 
-    /*public void changePaymentStatus(){
+    public void changePaymentStatus() {
         Member member;
-        ui.printArraylist(memberList);
-
         try {
             while (true) {
                 ui.clear();
-                ui.printArraylist(memberList);
+                ui.printArraylist(members.getMembersList());
                 ui.printString("Vælg et medlem for at opdatere betalingsstatus. ");
                 ui.print("\nAngiv medlemsnummer >>");
 
@@ -95,6 +92,10 @@ public class Economics {
                     ui.scannerLine();
                     ui.clear();
                 } else {
+                    ui.printString(member.toString());
+                    member.setPaid(!member.isPaid());
+                    ui.printString(member.toString());
+                    memberFileWriter.updateMembers(members.getMembersList());
                     break;
                 }
             }
@@ -103,9 +104,17 @@ public class Economics {
             ui.printString("Dette medlemsnummer findes ikke...");
         }
 
-    }*/
+    }
 
-
+    public void resetYear() {
+        Member member;
+        for (int i = 0; i < members.getMembersList().size()+1; i++) {
+            member = members.getMemberFromNumber(i);
+            if (member != null)
+                member.setPaid(false);
+        }
+        memberFileWriter.updateMembers(members.getMembersList());
+    }
 
 
 }

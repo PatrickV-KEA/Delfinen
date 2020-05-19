@@ -10,14 +10,40 @@ public class CoachTeams {
     private UI ui = new UI();
     private Members members = new Members();
     private ArrayList<Member> memberList;
+    private MemberFileWriter memberFileWriter = new MemberFileWriter();
 
+    public void chooseMember() {
+        Member member;
+        try {
+            while (true) {
+                ui.clear();
+                ui.printArraylist(memberList);
+                ui.printString("Tilføj en svømmer til et hold: ");
+                ui.print("\nAngiv medlemsnummer >>");
 
-    public void assignSwimmer() {
+                int number = ui.scannerInt();
+                member = members.getMemberFromNumber(number);
+
+                if (member == null) {
+                    ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >>");
+                    ui.scannerLine();
+                    ui.clear();
+                } else {
+                    assignSwimmer(member);
+                    memberFileWriter.updateMembers(members.getMembersList());
+                break; }
+            }
+        } catch (IllegalArgumentException e) {
+            ui.printString("Dette medlemsnummer findes ikke...");
+        }
+    }
+
+    public void assignSwimmer(Member member) {
         Boolean condition = true;
         while (condition) {
             ui.clear();
             ui.printString("\nVælg Disciplin:");
-            ui.printString("    1-[Butterfly]\n    2-[Crawl]\n    3-[Rygcrawl]\n    4-[brystsvømning]\n    0-[annuller]");
+            ui.printString("    1-[Butterfly]\n    2-[Crawl]\n    3-[Rygcrawl]\n    4-[Brystsvømning]\n    0-[annuller]");
             ui.print(">>");
 
             switch (ui.scannerInt()) {
@@ -25,52 +51,28 @@ public class CoachTeams {
                     condition = false;
                     break;
                 case 1:
-
+                    member.setDiscipline("Butterfly");
                     break;
                 case 2:
-
-                    condition = false;
+                    member.setDiscipline("Crawl");
                     break;
                 case 3:
-
-                    condition = false;
+                    member.setDiscipline("Rygcrawl");
                     break;
                 case 4:
-
-                    condition = false;
+                    member.setDiscipline("Bystsvømning");
                     break;
             }
 
         }
     }
 
-    private Member chooseMember(ArrayList<Member> memberList) {
-            Member member;
-            try {
-        while (true) {
-            ui.clear();
-            ui.printArraylist(memberList);
-            ui.printString("Tilføj en svømmer til et hold: ");
-            ui.print("\nAngiv medlemsnummer >>");
+    public void editResult(){
 
-            int number = ui.scannerInt();
-            member = members.getMemberFromNumber(number);
-            if (member == null) {
-                ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >>");
-                ui.scannerLine();
-                ui.clear();
-            } else {
-                break;
-            }
-        }
-        return member;
-    } catch (IllegalArgumentException e) {
-        ui.printString("Dette medlemsnummer findes ikke...");
+        //chooseMember(memberList).setBestTime(ui.scannerInt());
+
+
     }
-        return null;
-}
-
-    public void editResult(){}
 
     public void juniorTeams () {
         ArrayList<Member> crawl = new ArrayList<>();
