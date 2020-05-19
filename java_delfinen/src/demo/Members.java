@@ -1,6 +1,6 @@
 package demo;
 /**
- * @author Adam kasper
+ * @author Adam
  */
 
 import java.util.ArrayList;
@@ -24,21 +24,8 @@ public class Members {
     public ArrayList<Member> getMembersList() {
         return membersList;
     }
-    /*
-    public void SortMembers() {
-        for (int i = 0; i < members.size(); i++) {
-            if (members.get(i).getAge() < 18){
-                addJunior(members.get(i));
-            }
-            if (members.get(i).getAge() > 18 && members.get(i).getAge() < 60) {
-                addSenior(members.get(i));
-            }
-            if (members.get(i).getAge() > 60){
-                addElder(members.get(i));
-            }
-        }
-    }*/
 }
+
 
 
 
