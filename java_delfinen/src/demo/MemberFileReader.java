@@ -34,7 +34,6 @@ public class MemberFileReader {
     public ArrayList<Member> getMembersList() {
 
         ArrayList<Member> memberArrayList = new ArrayList<>();
-
         try {
             java.io.FileReader fr = new java.io.FileReader(file);
             BufferedReader br = new BufferedReader(fr);

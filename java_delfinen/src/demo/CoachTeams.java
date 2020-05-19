@@ -108,7 +108,7 @@ public class CoachTeams {
                     ui.printString("Medlem valgt:");
                     ui.print(member.toString());
                     ui.printString("\nAngiv ny tid:");
-                    int time = ui.scannerInt();
+                    float time = ui.scannerFloat();
                     member.setBestTime(time);
                     ui.printString(member.toString());
                     memberFileWriter.updateMembers(members.getMembersList());

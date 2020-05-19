@@ -31,11 +31,23 @@ public class UI {
     public int scannerInt() {
         int number;
         while (!scan.hasNextInt()) {
-            System.out.println("Vælg et tal");
-            System.out.print(">>");
+            System.out.println("Vælg et heltal");
+            System.out.print(">> ");
             scan.nextLine();
         }
         number = scan.nextInt();
+        return number;
+    }
+
+    public float scannerFloat() {
+        float number;
+        while (!scan.hasNextFloat()) {
+            scan.nextLine();
+            System.out.println("Vælg et tal");
+            System.out.print(">> ");
+            scan.nextLine();
+        }
+        number = scan.nextFloat();
         return number;
     }
 
@@ -48,7 +60,7 @@ public class UI {
         String str;
         while (!scan.hasNext()) {
             System.out.println("Skriv tekst");
-            System.out.print(">>");
+            System.out.print(">> ");
             scan.nextLine();
         }
         str = scan.next();
