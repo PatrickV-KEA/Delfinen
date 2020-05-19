@@ -70,6 +70,8 @@ public class CoachTeams {
         return null;
 }
 
+    public void editResult(){}
+
     public void juniorTeams () {
         ArrayList<Member> crawl = new ArrayList<>();
         ArrayList<Member> backCrawl = new ArrayList<>();
@@ -222,7 +224,7 @@ public class CoachTeams {
         ui.printString("");
     }
 
-    public void editResult(){}
+
 
 }
 
