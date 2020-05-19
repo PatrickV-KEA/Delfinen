@@ -22,12 +22,14 @@ public class CoachTeams {
 
                 int number = ui.scannerInt();
                 member = members.getMemberFromNumber(number);
-                assignSwimmer(member);
+
                 if (member == null) {
                     ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >>");
                     ui.scannerLine();
                     ui.clear();
-                } else { break; }
+                } else {
+                    assignSwimmer(member);
+                break; }
             }
         } catch (IllegalArgumentException e) {
             ui.printString("Dette medlemsnummer findes ikke...");
