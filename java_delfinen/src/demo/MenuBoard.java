@@ -1,82 +1,82 @@
-package demo;
 /**
- *
- * @author Adam
- *
+ * @author Adam Patrick
  */
+package demo;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class MenuBoard {
-    UI ui = new UI();
+    // -------------------------------------------------------------------------------------------------
+    // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // -------------------------------------------------------------------------------------------------
+    private UI ui = new UI();
     private ArrayList<Member> members;
 
+    // -------------------------------------------------------------------------------------------------
+    // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // -------------------------------------------------------------------------------------------------
     public MenuBoard(ArrayList<Member> members) {
         this.members = members;
     }
 
+    // -------------------------------------------------------------------------------------------------
+    // BEHAVIOR METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // -------------------------------------------------------------------------------------------------
     public void menu() {
-        String name;
-        LocalDate birthday;
-        int cpr;
-        boolean payed = false;
-        boolean active = true;
-        int day, mouth, year;
-
-
-        ui.printString("Her kan du indmelde nye medlemmer.");
-        ui.print("Intast navn: ");
-        name = ui.scannerString();
-        ui.printString("");
-        ui.print("intast fødeselsår: ");
-        year = ui.scannerInt();
-        ui.printString("");
-        ui.print("indtast fødeselmåned: ");
-        mouth = ui.scannerInt();
-        ui.printString("");
-        ui.print("indtast fødeseldag: ");
-        day = ui.scannerInt();
-
-        birthday = LocalDate.of(year, mouth, day);
-
-        ui.print("Indtast cpr (de sidste 4 cifre):");
-        cpr = ui.scannerInt();
-        ui.print("");
-
-        boolean validAnswer = false;
-        do {
-            ui.printString("Er der betalt kontingent for i år?");
-            ui.print("ja/nej >> ");
-            String answer = ui.scannerString();
-            if (answer.equals( "ja")) {
-                payed = true;
-                validAnswer = true;
-            } else if (answer.equals("nej")) {
-                payed = false;
-                validAnswer = true;
-            } else {
-                validAnswer = false;
+        boolean condition = true;
+        while (condition) {
+            ui.print("Tast 0 for hovedmenu\nTast 1 for at tilføje et medlem\n>>");
+            switch (ui.scannerInt()) {
+                case 0:
+                    condition = false;
+                    break;
+                case 1:
+                    members.add(createMember());
+                    break;
             }
-        } while (!validAnswer);
+        }
+    }
 
+    private Member createMember() {
+        ui.clear();
 
-        boolean validAnswer2 = false;
-        do {
-            ui.printString("Er det et aktivt medlemsskab?");
-            ui.print("ja/nej >> ");
-            String answer = ui.scannerString();
-            if (answer.equals( "ja")) {
-                active = true;
-                validAnswer2 = true;
-            } else if (answer.equals( "nej")) {
-                active = false;
-                validAnswer2 = true;
-            } else {
-                validAnswer2 = false;
+        ui.print("Her kan du indmelde nye medlemmer.\nIntast navn: ");
+        String name = ui.scannerString();
+
+        ui.print("\nintast fødeselsår: ");
+        int year = ui.scannerInt();
+
+        ui.print("\nindtast fødeselmåned: ");
+        int mouth = ui.scannerInt();
+
+        ui.print("\nindtast fødeseldag: ");
+        int day = ui.scannerInt();
+
+        ui.print("\nIndtast cpr (de sidste 4 cifre):");
+        int cpr = ui.scannerInt();
+
+        ui.print("Er der betalt kontingent for i år?\nja/nej: ");
+        boolean paid = getYN();
+
+        ui.print("Er det et aktivt medlemsskab?\nja/nej: ");
+        boolean active = getYN();
+
+        LocalDate birthday = LocalDate.of(year, mouth, day);
+        return new Member(name, birthday, cpr, paid, active);
+    }
+
+    private boolean getYN() {
+
+        while (true) {
+            switch (ui.scannerString()) {
+                case "ja":
+                    return true;
+                case "nej":
+                    return false;
+                default:
+                    ui.print("\nDu skal skrive enten ja/nej: ");
             }
-        } while (!validAnswer2);
-
-        Member member = new Member(name,birthday,cpr,payed,active);
-        members.add(member);
+        }
     }
 }
