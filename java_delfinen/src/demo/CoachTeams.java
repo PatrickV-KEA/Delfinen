@@ -157,7 +157,7 @@ public class CoachTeams {
         ui.printArraylist(breast);
         ui.printString("");
     }
-    
+
     public void seniorTeams() {
         ArrayList<Member> crawl = new ArrayList<>();
         ArrayList<Member> backCrawl = new ArrayList<>();
