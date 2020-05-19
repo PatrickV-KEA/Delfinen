@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class MenuCoach {
 
+    CoachTeams coachTeams = new CoachTeams();
     UI ui = new UI();
     ArrayList<Member> members;
 
@@ -38,8 +39,8 @@ public class MenuCoach {
                     break;
 
                 case 2:
-                    //se holdeliste
-
+                    coachTeams.juniorTeams();
+                    coachTeams.seniorTeams();
                     break;
                 case 3:
                     //tilføj svømmer til hold
