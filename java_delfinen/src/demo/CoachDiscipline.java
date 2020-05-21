@@ -1,3 +1,6 @@
+/**
+ * @author kasper, Adam
+ */
 package demo;
 
 public class CoachDiscipline {
