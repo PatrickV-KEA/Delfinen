@@ -33,4 +33,8 @@ public class Members {
     public ArrayList<Member> getMembersList() {
         return membersList;
     }
+
+    public void updateMembers(){
+        memberFileWriter.updateMembers(membersList);
+    }
 }
