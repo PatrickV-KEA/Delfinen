@@ -6,13 +6,16 @@ package demo;
 public class MenuCoach {
     private Members members;
     private CoachTeams coachTeams;
+    private CoachTournament coachTournament;
+    private CoachDiscipline coachDiscipline;
     private UI ui = new UI();
 
     public MenuCoach(Members members) {
         this.members = members;
         this.coachTeams = new CoachTeams(members);
+        this.coachTournament = new CoachTournament(members);
+        this.coachDiscipline = new CoachDiscipline(members);
     }
-
     public void menu() {
         Boolean condition = true;
         while (condition) {
@@ -33,55 +36,56 @@ public class MenuCoach {
                         ui.printString("\nTryk enter for menu");
                         ui.scannerLine();
                         break;
-
                     case 2:
                         //se hold liste
                         ui.printString("Junior hold: \n");
-                        coachTeams.juniorTeams();
+                        //coachTeams.juniorTeams();
+                        coachTeams.teams(true,false);
 
                         ui.printString("\nSenior hold: \n");
-                        coachTeams.seniorTeams();
+                        //coachTeams.seniorTeams();
+                        coachTeams.teams(false,false);
 
                         ui.printString("\nTryk enter for menu");
                         ui.scannerLine();
                         break;
                     case 3:
                         //tilføj svømmer til hold
-                        coachTeams.chooseMember();
+                        coachDiscipline.chooseMember();
                         break;
                     case 4:
                         //ændre resultat for svømmer
-                        coachTeams.editResult();
+                        coachDiscipline.editResult();
                         ui.printString("\nTryk enter for menu");
                         ui.scannerLine();
                         break;
                     case 5:
                         //se top 5
                         ui.printString("Junior:\n");
-                        coachTeams.topFiveJunior();
+                        //coachTeams.topFiveJunior();
+                        coachTeams.teams(true,true);
 
                         ui.printString("\nSenior: \n");
-                        coachTeams.topFiveSenior();
+                        //coachTeams.topFiveSenior();
+                        coachTeams.teams(false,true);
 
                         ui.printString("\nTryk enter for menu");
                         ui.scannerLine();
                         break;
                     case 6:
                         //tilføj stævne til medlem
-                        coachTeams.assignToTournament();
+                        coachTournament.assignToTournament();
                         ui.printString("\nTryk enter for menu");
                         ui.scannerLine();
                     case 0:
                         //tilbage til hovedmenuen
                         condition = false;
                         break;
-
                     default:
                         throw new IllegalArgumentException();
                 }
             } catch (IllegalArgumentException e) {
                 e.printStackTrace();
-
             }
         }
     }

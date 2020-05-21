@@ -6,11 +6,9 @@ package demo;
 public class MenuEconomics {
 
     private UI ui = new UI();
-    private Members members;
     private Economics economics;
 
     public MenuEconomics(Members members) {
-        this.members = members;
         economics = new Economics(members);
     }
 
