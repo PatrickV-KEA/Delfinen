@@ -19,6 +19,7 @@ public class UI {
         for (int i = 0; i < arrayList.size(); i++) {
             printString(arrayList.get(i).toString());
         }
+        printString("");
     }
 
     public void printArraylistFive(ArrayList arrayList) {
