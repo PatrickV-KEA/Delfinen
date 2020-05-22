@@ -14,8 +14,8 @@ public class MenuCoach {
     public MenuCoach(Members members, UI ui) {
         this.members = members;
         this.ui = ui;
-        this.coachTournament = new CoachTournament(members);
-        this.coachDiscipline = new CoachDiscipline(members);
+        this.coachTournament = new CoachTournament(members, ui);
+        this.coachDiscipline = new CoachDiscipline(members, ui);
     }
     public void menu() {
         while (true) {
@@ -55,7 +55,7 @@ public class MenuCoach {
                         break;
                     case 3:
                         //tilføj svømmer til hold
-                        coachDiscipline.chooseMember();
+                        coachDiscipline.assignMember();
                         break;
                     case 4:
                         //ændre resultat for svømmer

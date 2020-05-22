@@ -4,16 +4,15 @@
 package Program;
 
 import UI.UI;
-
 import java.time.LocalDate;
 
 public class CoachTournament {
-
-    UI ui = new UI();
+    UI ui;
     Members members;
 
-    public CoachTournament(Members members) {
+    public CoachTournament(Members members, UI ui) {
         this.members = members;
+        this.ui = ui;
     }
 
     public void assignToTournament() {
@@ -22,24 +21,19 @@ public class CoachTournament {
             while (true) {
                 ui.clearScreen();
                 ui.printArraylist(members.getMembersList());
-                ui.printString("Tilføj et medlem til et stævne: ");
-                ui.print("\nAngiv medlemsnummer >>");
+                ui.print("Tilføj et medlem til et stævne: \nAngiv medlemsnummer >> ");
 
-                int number = ui.getUserInputInt();
-                ui.printString("");
-                member = members.getMemberFromNumber(number);
+                member = members.getMemberFromNumber(ui.getUserInputInt());
                 if (member == null) {
-                    ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >>");
+                    ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >> ");
                     ui.getUserLine();
                     ui.clearScreen();
                 } else {
-                    ui.printString("Medlem valgt:");
-                    ui.print(member.toString());
+                    ui.print("Medlem valgt:\n" + member.toString());
                     createTournament(member);
-                    ui.printString("Stævne angivet: \n");
-                    ui.print(member.toString());
+                    ui.print("Stævne angivet: \n" + member.toString());
                     members.updateMembers();
-                    break;
+                    return;
                 }
             }
         } catch (IllegalArgumentException e) {
@@ -67,8 +61,7 @@ public class CoachTournament {
         int year = ui.getUserInputInt();
 
         LocalDate date = LocalDate.of(year, month, day);
-
-        ui.print("Stævne er tilføjet\n\n");
         member.addTournament(new Tournament(name, result, time, date));
+        ui.print("Stævne er tilføjet\n\n");
     }
 }

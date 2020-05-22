@@ -6,26 +6,25 @@ package Program;
 import UI.UI;
 
 public class MenuEconomics {
-
-    private UI ui = new UI();
+    private UI ui;
     private Economics economics;
 
-    public MenuEconomics(Members members) {
-        economics = new Economics(members);
+    public MenuEconomics(Members members, UI ui) {
+        this.economics = new Economics(members);
+        this.ui = ui;
     }
 
     public void menu() {
-        Boolean condition = true;
-        while (condition) {
+        while (true) {
             ui.printString("Du har nu følgende muligheder");
             ui.printString("Tryk 1 For restance listen");
             ui.printString("Tryk 2 For medlemslisten");
             ui.printString("Tryk 3 For at ændre aktiv staus hos et medlem");
-            ui.printString("tryk 4 for at indskrive en betaling   ");
+            ui.printString("tryk 4 for at indskrive en betaling");
             ui.printString("Tryk 5 for årest samlede kontingent");
             ui.printString("Tryk 6 for at starte nyt betalingsår");
             ui.printString("Tryk 0 for at vende tilbage til hovedmenuen");
-            ui.print(">>");
+            ui.print(">> ");
             try {
                 switch (ui.getUserInputInt()) {
                     case 1:
@@ -66,8 +65,7 @@ public class MenuEconomics {
                         break;
                     case 0:
                         //tilbage til hovedmenuen
-                        condition = false;
-                        break;
+                        return;
                     default:
                         throw new IllegalArgumentException();
                 }

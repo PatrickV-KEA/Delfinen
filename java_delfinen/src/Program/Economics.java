@@ -4,15 +4,14 @@
 package Program;
 
 import UI.UI;
-
 import java.util.ArrayList;
 
 public class Economics {
-
-    private UI ui = new UI();
+    private UI ui;
     private Members members;
 
     public Economics(Members members) {
+        this.ui = new UI();
         this.members = members;
     }
 
@@ -31,7 +30,6 @@ public class Economics {
 
     public void getTotalContingent() {
         int total = 0;
-
         for (int i = 0; i < members.getMembersList().size(); i++) {
             if (!members.getMembersList().get(i).isActive()) {
                 total = total + 500;
@@ -52,7 +50,6 @@ public class Economics {
 
     public void printMemberList() {
         int contingent = 0;
-
         for (int i = 0; i < members.getMembersList().size(); i++) {
             if (!members.getMembersList().get(i).isActive()) {
                 contingent = 500;
@@ -67,10 +64,8 @@ public class Economics {
                     contingent = 1200;
                 }
             }
-
             ui.printString("" + members.getMembersList().get(i) + " " + contingent + " kr. kontingent.");
         }
-
     }
 
     public void changePaymentStatus() {
@@ -79,13 +74,11 @@ public class Economics {
             while (true) {
                 ui.clearScreen();
                 ui.printArraylist(members.getMembersList());
-                ui.printString("Vælg et medlem for at opdatere betalingsstatus. ");
-                ui.print("\nAngiv medlemsnummer >>");
+                ui.print("Vælg et medlem for at opdatere betalingsstatus.\nAngiv medlemsnummer >> ");
 
-                int number = ui.getUserInputInt();
-                member = members.getMemberFromNumber(number);
+                member = members.getMemberFromNumber(ui.getUserInputInt());
                 if (member == null) {
-                    ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >>");
+                    ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >> ");
                     ui.getUserLine();
                     ui.clearScreen();
                 } else {
@@ -96,11 +89,9 @@ public class Economics {
                     break;
                 }
             }
-
         } catch (IllegalArgumentException e) {
             ui.printString("Dette medlemsnummer findes ikke...");
         }
-
     }
 
     public void resetYear() {
@@ -119,13 +110,11 @@ public class Economics {
             while (true) {
                 ui.clearScreen();
                 ui.printArraylist(members.getMembersList());
-                ui.printString("Vælg et medlem for at ændre aktiv/passiv status. ");
-                ui.print("\nAngiv medlemsnummer >>");
+                ui.print("Vælg et medlem for at ændre aktiv/passiv status.\nAngiv medlemsnummer >> ");
 
-                int number = ui.getUserInputInt();
-                member = members.getMemberFromNumber(number);
+                member = members.getMemberFromNumber(ui.getUserInputInt());
                 if (member == null) {
-                    ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >>");
+                    ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >> ");
                     ui.getUserLine();
                     ui.clearScreen();
                 } else {

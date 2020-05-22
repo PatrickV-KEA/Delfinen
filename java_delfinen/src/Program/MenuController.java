@@ -21,9 +21,9 @@ public class MenuController {
     public MenuController() {
         ui = new UI();
         members = new Members();
-        menuBoard = new MenuBoard(members);
+        menuBoard = new MenuBoard(members, ui);
         menuCoach = new MenuCoach(members, ui);
-        menuEconomics = new MenuEconomics(members);
+        menuEconomics = new MenuEconomics(members, ui);
     }
 
     // -------------------------------------------------------------------------------------------------

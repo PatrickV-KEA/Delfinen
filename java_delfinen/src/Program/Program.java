@@ -1,6 +1,5 @@
 package Program;
 
-
 import UI.UI;
 
 public class Program {
