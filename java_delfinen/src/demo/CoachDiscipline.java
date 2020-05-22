@@ -15,14 +15,14 @@ public class CoachDiscipline {
         Member member;
         try {
             while (true) {
-                ui.clear();
+                ui.clearScreen();
                 ui.printArraylist(members.getMembersList());
                 ui.print("Tilføj et medlem til et hold: \nAngiv medlemsnummer \n>> ");
                 member = members.getMemberFromNumber(ui.getUserInputInt());
                 if (member == null) {
                     ui.print("\nMedlem med givet nummer findes ikke...\nTryk Enter >> ");
-                    ui.scannerLine();
-                    ui.clear();
+                    ui.getUserLine();
+                    ui.clearScreen();
                 } else {
                     ui.printString("\nMedlem valgt: \n" + member.toString());
                     assignSwimmer(member);
@@ -78,7 +78,7 @@ public class CoachDiscipline {
         Member member;
         try {
             while (true) {
-                ui.clear();
+                ui.clearScreen();
                 ui.printArraylist(members.getMembersList());
                 ui.printString("Ændre svømmer resultat: ");
                 ui.print("\nAngiv medlemsnummer >>");
@@ -88,8 +88,8 @@ public class CoachDiscipline {
                 member = members.getMemberFromNumber(number);
                 if (member == null) {
                     ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >>");
-                    ui.scannerLine();
-                    ui.clear();
+                    ui.getUserLine();
+                    ui.clearScreen();
                 } else {
                     ui.printString("Medlem valgt:");
                     ui.print(member.toString());

@@ -18,7 +18,7 @@ public class CoachTournament {
         Member member;
         try {
             while (true) {
-                ui.clear();
+                ui.clearScreen();
                 ui.printArraylist(members.getMembersList());
                 ui.printString("Tilføj et medlem til et stævne: ");
                 ui.print("\nAngiv medlemsnummer >>");
@@ -28,8 +28,8 @@ public class CoachTournament {
                 member = members.getMemberFromNumber(number);
                 if (member == null) {
                     ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >>");
-                    ui.scannerLine();
-                    ui.clear();
+                    ui.getUserLine();
+                    ui.clearScreen();
                 } else {
                     ui.printString("Medlem valgt:");
                     ui.print(member.toString());
@@ -47,7 +47,7 @@ public class CoachTournament {
 
     public void createTournament(Member member) {
         ui.print("\nAngiv stævne og resultater til svømmer.\nIntast stævne navn: ");
-        String name = ui.scannerString();
+        String name = ui.getUserString();
 
         ui.print("\nIndtast svømmerens placering: ");
         int result = ui.getUserInputInt();

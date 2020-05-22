@@ -38,10 +38,10 @@ public class MenuBoard {
     }
 
     private Member createMember() {
-        ui.clear();
+        ui.clearScreen();
 
         ui.print("Her kan du indmelde nye medlemmer.\nIntast navn: ");
-        String name = ui.scannerString();
+        String name = ui.getUserString();
 
         ui.print("\nintast fødeselsår: ");
         int year = ui.getUserInputInt();
@@ -63,7 +63,7 @@ public class MenuBoard {
 
         LocalDate birthday = LocalDate.of(year, mouth, day);
 
-        ui.clear();
+        ui.clearScreen();
         ui.print("Medlemmet er tilføjet\n\n");
         return new Member(name, birthday, cpr, paid, active);
     }
@@ -71,7 +71,7 @@ public class MenuBoard {
     private boolean getYN() {
 
         while (true) {
-            switch (ui.scannerString()) {
+            switch (ui.getUserString()) {
                 case "ja":
                     return true;
                 case "nej":
