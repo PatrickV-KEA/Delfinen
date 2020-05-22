@@ -76,7 +76,7 @@ public class Economics {
         Member member;
         try {
             while (true) {
-                ui.clear();
+                ui.clearScreen();
                 ui.printArraylist(members.getMembersList());
                 ui.printString("Vælg et medlem for at opdatere betalingsstatus. ");
                 ui.print("\nAngiv medlemsnummer >>");
@@ -85,8 +85,8 @@ public class Economics {
                 member = members.getMemberFromNumber(number);
                 if (member == null) {
                     ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >>");
-                    ui.scannerLine();
-                    ui.clear();
+                    ui.getUserLine();
+                    ui.clearScreen();
                 } else {
                     ui.printString(member.toString());
                     member.setPaid(!member.isPaid());
@@ -116,7 +116,7 @@ public class Economics {
         Member member;
         try {
             while (true) {
-                ui.clear();
+                ui.clearScreen();
                 ui.printArraylist(members.getMembersList());
                 ui.printString("Vælg et medlem for at ændre aktiv/passiv status. ");
                 ui.print("\nAngiv medlemsnummer >>");
@@ -125,8 +125,8 @@ public class Economics {
                 member = members.getMemberFromNumber(number);
                 if (member == null) {
                     ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >>");
-                    ui.scannerLine();
-                    ui.clear();
+                    ui.getUserLine();
+                    ui.clearScreen();
                 } else {
                     ui.printString(member.toString());
                     member.setActive(!member.isActive());

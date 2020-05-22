@@ -51,12 +51,12 @@ public class UI {
         return number;
     }
 
-    public void scannerLine() {
+    public void getUserLine() {
         scan.nextLine();
         scan.nextLine();
     }
 
-    public String scannerString() {
+    public String getUserString() {
         String str;
         while (!scan.hasNext()) {
             System.out.println("Skriv tekst");
@@ -67,14 +67,14 @@ public class UI {
         return str;
     }
 
-    public String scannerStringLine() {
+    public String getUserStringLine() {
         String str;
         scan.nextLine();
         str = scan.nextLine();
         return str;
     }
 
-    public void clear() {
+    public void clearScreen() {
         for (int i = 0; i < 100; i++) {
             System.out.println();
         }

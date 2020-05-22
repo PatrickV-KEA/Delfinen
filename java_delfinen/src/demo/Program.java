@@ -21,10 +21,10 @@ public class Program {
     // -------------------------------------------------------------------------------------------------
     private void run() {
         while (true) {
-            ui.clear();
+            ui.clearScreen();
             menuController.run();
             ui.printString("\nTryk enter for menu");
-            ui.scannerLine();
+            ui.getUserLine();
         }
     }
 }

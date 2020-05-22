@@ -30,37 +30,37 @@ public class MenuEconomics {
                         //restance liste
                         economics.printMemberArrears();
                         ui.printString("\nTryk enter for menu");
-                        ui.scannerLine();
+                        ui.getUserLine();
                         break;
                     case 2:
                         //medlemsliste
                         economics.printMemberList();
                         ui.printString("\nTryk enter for menu");
-                        ui.scannerLine();
+                        ui.getUserLine();
                         break;
                     case 3:
                         //ændre aktiv status
                         economics.changeActive();
                         ui.printString("\nTryk enter for menu");
-                        ui.scannerLine();
+                        ui.getUserLine();
                         break;
                     case 4:
                         //indkriv betaling
                         economics.changePaymentStatus();
                         ui.printString("\nTryk enter for menu");
-                        ui.scannerLine();
+                        ui.getUserLine();
                         break;
                     case 5:
                         //se samlede kontingent
                         economics.getTotalContingent();
                         ui.printString("\nTryk enter for menu");
-                        ui.scannerLine();
+                        ui.getUserLine();
                         break;
                     case 6:
                         //start nyt betalingsår
                         economics.resetYear();
                         ui.printString("\nTryk enter for menu");
-                        ui.scannerLine();
+                        ui.getUserLine();
                         break;
                     case 0:
                         //tilbage til hovedmenuen

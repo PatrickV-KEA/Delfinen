@@ -19,7 +19,7 @@ public class MenuCoach {
     public void menu() {
         Boolean condition = true;
         while (condition) {
-            ui.clear();
+            ui.clearScreen();
             ui.printString("Tryk 1 For at se medlemsliste");
             ui.printString("Tryk 2 For at se holdliste");
             ui.printString("Tryk 3 For at tilføj medlem til svømmehold");
@@ -34,7 +34,7 @@ public class MenuCoach {
                         //se medlemsliste
                         ui.printArraylist(members.getMembersList());
                         ui.printString("\nTryk enter for menu");
-                        ui.scannerLine();
+                        ui.getUserLine();
                         break;
                     case 2:
                         //se hold liste
@@ -45,7 +45,7 @@ public class MenuCoach {
                         coachTeams.teams(false,false);
 
                         ui.printString("\nTryk enter for menu");
-                        ui.scannerLine();
+                        ui.getUserLine();
                         break;
                     case 3:
                         //tilføj svømmer til hold
@@ -55,7 +55,7 @@ public class MenuCoach {
                         //ændre resultat for svømmer
                         coachDiscipline.editResult();
                         ui.printString("\nTryk enter for menu");
-                        ui.scannerLine();
+                        ui.getUserLine();
                         break;
                     case 5:
                         //se top 5
@@ -68,13 +68,13 @@ public class MenuCoach {
                         coachTeams.teams(false,true);
 
                         ui.printString("\nTryk enter for menu");
-                        ui.scannerLine();
+                        ui.getUserLine();
                         break;
                     case 6:
                         //tilføj stævne til medlem
                         coachTournament.assignToTournament();
                         ui.printString("\nTryk enter for menu");
-                        ui.scannerLine();
+                        ui.getUserLine();
                     case 0:
                         //tilbage til hovedmenuen
                         condition = false;
