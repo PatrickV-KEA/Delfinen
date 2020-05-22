@@ -7,7 +7,7 @@ public class MenuController {
     // -------------------------------------------------------------------------------------------------
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    private UI ui = new UI();
+    private UI ui = new UI(); //Pass through system
     private Members members = new Members();
     private MenuBoard menuBoard = new MenuBoard(members);
     private MenuCoach menuCoach = new MenuCoach(members);
@@ -27,7 +27,7 @@ public class MenuController {
         ui.printString("Tryk 3 For formanden");
         ui.print(">>");
         try {
-            switch (ui.scannerInt()) {
+            switch (ui.getUserInputInt()) {
                 case 1:
                     //træner menu
                     menuCoach.menu();

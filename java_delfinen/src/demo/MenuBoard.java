@@ -26,7 +26,7 @@ public class MenuBoard {
         boolean condition = true;
         while (condition) {
             ui.print("Tast 1 for at tilføje et medlem\nTast 0 for hovedmenu\n>>");
-            switch (ui.scannerInt()) {
+            switch (ui.getUserInputInt()) {
                 case 1:
                     members.addMember(createMember());
                     break;
@@ -44,16 +44,16 @@ public class MenuBoard {
         String name = ui.scannerString();
 
         ui.print("\nintast fødeselsår: ");
-        int year = ui.scannerInt();
+        int year = ui.getUserInputInt();
 
         ui.print("\nindtast fødeselmåned: ");
-        int mouth = ui.scannerInt();
+        int mouth = ui.getUserInputInt();
 
         ui.print("\nindtast fødeseldag: ");
-        int day = ui.scannerInt();
+        int day = ui.getUserInputInt();
 
         ui.print("\nIndtast cpr (de sidste 4 cifre):");
-        int cpr = ui.scannerInt();
+        int cpr = ui.getUserInputInt();
 
         ui.print("Er der betalt kontingent for i år?\nja/nej: ");
         boolean paid = getYN();

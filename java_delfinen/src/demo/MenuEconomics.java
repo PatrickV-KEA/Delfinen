@@ -25,7 +25,7 @@ public class MenuEconomics {
             ui.printString("Tryk 0 for at vende tilbage til hovedmenuen");
             ui.print(">>");
             try {
-                switch (ui.scannerInt()) {
+                switch (ui.getUserInputInt()) {
                     case 1:
                         //restance liste
                         economics.printMemberArrears();

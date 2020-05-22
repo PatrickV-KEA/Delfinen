@@ -81,7 +81,7 @@ public class Economics {
                 ui.printString("Vælg et medlem for at opdatere betalingsstatus. ");
                 ui.print("\nAngiv medlemsnummer >>");
 
-                int number = ui.scannerInt();
+                int number = ui.getUserInputInt();
                 member = members.getMemberFromNumber(number);
                 if (member == null) {
                     ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >>");
@@ -121,7 +121,7 @@ public class Economics {
                 ui.printString("Vælg et medlem for at ændre aktiv/passiv status. ");
                 ui.print("\nAngiv medlemsnummer >>");
 
-                int number = ui.scannerInt();
+                int number = ui.getUserInputInt();
                 member = members.getMemberFromNumber(number);
                 if (member == null) {
                     ui.print("Medlem med givet nummer findes ikke...\nTryk Enter >>");
