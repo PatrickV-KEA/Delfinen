@@ -195,6 +195,14 @@ public class Member implements Comparable<Member> {
         return tournaments;
     }
 
+    public String getLeague() {
+        if (getAge() < 18) {
+            return "junior";
+        } else {
+            return "senior";
+        }
+    }
+
     public void setTournaments(ArrayList<Tournament> tournaments) {
         this.tournaments = tournaments;
     }

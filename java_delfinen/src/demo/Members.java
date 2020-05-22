@@ -4,14 +4,24 @@
 package demo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Members {
     // -------------------------------------------------------------------------------------------------
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    private MemberFileReader memberFileReader = new MemberFileReader();
-    private MemberFileWriter memberFileWriter = new MemberFileWriter();
-    private ArrayList<Member> membersList = memberFileReader.getMembersList();
+    private MemberFileReader memberFileReader;
+    private MemberFileWriter memberFileWriter;
+    private ArrayList<Member> membersList;
+
+    // -------------------------------------------------------------------------------------------------
+    // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // -------------------------------------------------------------------------------------------------
+    public Members() {
+        memberFileReader = new MemberFileReader();
+        memberFileWriter = new MemberFileWriter();
+        membersList = memberFileReader.getMembersList();
+    }
 
     // -------------------------------------------------------------------------------------------------
     // BEHAVIOR METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -36,5 +46,18 @@ public class Members {
 
     public void updateMembers(){
         memberFileWriter.updateMembers(membersList);
+    }
+
+    public ArrayList<Member> getTeam(String league, String discipline) {
+        ArrayList<Member> team = new ArrayList<>();
+        for (Member member: membersList) {
+            if (member.getDiscipline() == null) {
+                continue;
+            } else if (member.getLeague().equals(league) && member.getDiscipline().equals(discipline)) {
+                team.add(member);
+            }
+        } //END OF FOR-LOOP
+        Collections.sort(team);
+        return team;
     }
 }

@@ -8,17 +8,17 @@ public class MenuCoach {
     private CoachTeams coachTeams;
     private CoachTournament coachTournament;
     private CoachDiscipline coachDiscipline;
-    private UI ui = new UI();
+    private UI ui;
 
-    public MenuCoach(Members members) {
+    public MenuCoach(Members members, UI ui) {
         this.members = members;
+        this.ui = ui;
         this.coachTeams = new CoachTeams(members);
         this.coachTournament = new CoachTournament(members);
         this.coachDiscipline = new CoachDiscipline(members);
     }
     public void menu() {
-        Boolean condition = true;
-        while (condition) {
+        while (true) {
             ui.clear();
             ui.printString("Tryk 1 For at se medlemsliste");
             ui.printString("Tryk 2 For at se holdliste");
@@ -39,10 +39,16 @@ public class MenuCoach {
                     case 2:
                         //se hold liste
                         ui.printString("Junior hold: \n");
-                        coachTeams.teams(true,false);
+                        ui.printArraylist(members.getTeam("junior", "Crawl"));
+                        ui.printArraylist(members.getTeam("junior", "Rygcrawl"));
+                        ui.printArraylist(members.getTeam("junior", "Brystsvømning"));
+                        ui.printArraylist(members.getTeam("junior", "Butterfly"));
 
                         ui.printString("\nSenior hold: \n");
-                        coachTeams.teams(false,false);
+                        ui.printArraylist(members.getTeam("senior", "Crawl"));
+                        ui.printArraylist(members.getTeam("senior", "Rygcrawl"));
+                        ui.printArraylist(members.getTeam("senior", "Brystsvømning"));
+                        ui.printArraylist(members.getTeam("senior", "Butterfly"));
 
                         ui.printString("\nTryk enter for menu");
                         ui.scannerLine();
@@ -59,13 +65,17 @@ public class MenuCoach {
                         break;
                     case 5:
                         //se top 5
-                        ui.printString("Junior:\n");
-                        //coachTeams.topFiveJunior();
-                        coachTeams.teams(true,true);
+                        ui.printString("Junior hold: \n");
+                        ui.printArraylistFive(members.getTeam("junior", "Crawl"));
+                        ui.printArraylistFive(members.getTeam("junior", "Rygcrawl"));
+                        ui.printArraylistFive(members.getTeam("junior", "Brystsvømning"));
+                        ui.printArraylistFive(members.getTeam("junior", "Butterfly"));
 
-                        ui.printString("\nSenior: \n");
-                        //coachTeams.topFiveSenior();
-                        coachTeams.teams(false,true);
+                        ui.printString("\nSenior hold: \n");
+                        ui.printArraylistFive(members.getTeam("senior", "Crawl"));
+                        ui.printArraylistFive(members.getTeam("senior", "Rygcrawl"));
+                        ui.printArraylistFive(members.getTeam("senior", "Brystsvømning"));
+                        ui.printArraylistFive(members.getTeam("senior", "Butterfly"));
 
                         ui.printString("\nTryk enter for menu");
                         ui.scannerLine();
@@ -77,8 +87,7 @@ public class MenuCoach {
                         ui.scannerLine();
                     case 0:
                         //tilbage til hovedmenuen
-                        condition = false;
-                        break;
+                        return;
                     default:
                         throw new IllegalArgumentException();
                 }

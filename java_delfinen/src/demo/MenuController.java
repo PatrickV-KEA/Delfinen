@@ -7,16 +7,22 @@ public class MenuController {
     // -------------------------------------------------------------------------------------------------
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    private UI ui = new UI(); //Pass through system
-    private Members members = new Members();
-    private MenuBoard menuBoard = new MenuBoard(members);
-    private MenuCoach menuCoach = new MenuCoach(members);
-    private MenuEconomics menuEconomics = new MenuEconomics(members);
+    private UI ui;
+    private Members members;
+    private MenuBoard menuBoard;
+    private MenuCoach menuCoach;
+    private MenuEconomics menuEconomics;
 
     // -------------------------------------------------------------------------------------------------
     // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    public MenuController() {}
+    public MenuController() {
+        ui = new UI();
+        members = new Members();
+        menuBoard = new MenuBoard(members);
+        menuCoach = new MenuCoach(members, ui);
+        menuEconomics = new MenuEconomics(members);
+    }
 
     // -------------------------------------------------------------------------------------------------
     // BEHAVIOR METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
