@@ -10,7 +10,6 @@ public class CoachTeams {
 
     private UI ui = new UI();
     private Members members;
-    private MemberFileWriter memberFileWriter = new MemberFileWriter();
 
     public CoachTeams(Members members) {
         this.members = members;

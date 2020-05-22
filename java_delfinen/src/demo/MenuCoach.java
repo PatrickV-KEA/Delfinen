@@ -29,7 +29,7 @@ public class MenuCoach {
             ui.printString("Tryk 0 for at vende tilbage til hovedmenuen");
             ui.print(">> ");
             try {
-                switch (ui.scannerInt()) {
+                switch (ui.getUserInputInt()) {
                     case 1:
                         //se medlemsliste
                         ui.printArraylist(members.getMembersList());
@@ -39,11 +39,9 @@ public class MenuCoach {
                     case 2:
                         //se hold liste
                         ui.printString("Junior hold: \n");
-                        //coachTeams.juniorTeams();
                         coachTeams.teams(true,false);
 
                         ui.printString("\nSenior hold: \n");
-                        //coachTeams.seniorTeams();
                         coachTeams.teams(false,false);
 
                         ui.printString("\nTryk enter for menu");

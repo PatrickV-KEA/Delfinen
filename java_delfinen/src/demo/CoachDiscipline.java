@@ -18,7 +18,7 @@ public class CoachDiscipline {
                 ui.clear();
                 ui.printArraylist(members.getMembersList());
                 ui.print("Tilføj et medlem til et hold: \nAngiv medlemsnummer \n>> ");
-                member = members.getMemberFromNumber(ui.scannerInt());
+                member = members.getMemberFromNumber(ui.getUserInputInt());
                 if (member == null) {
                     ui.print("\nMedlem med givet nummer findes ikke...\nTryk Enter >> ");
                     ui.scannerLine();
@@ -41,7 +41,7 @@ public class CoachDiscipline {
             ui.printString("\nVælg Disciplin:");
             ui.printString("    1-[Butterfly]\n    2-[Crawl]\n    3-[Rygcrawl]\n    4-[Brystsvømning]\n    5-[Angiv ingen disciplin]\n    0-[annuller]");
             ui.print(">>");
-            switch (ui.scannerInt()) {
+            switch (ui.getUserInputInt()) {
                 case 0:
                     condition = false;
                     break;
@@ -83,7 +83,7 @@ public class CoachDiscipline {
                 ui.printString("Ændre svømmer resultat: ");
                 ui.print("\nAngiv medlemsnummer >>");
 
-                int number = ui.scannerInt();
+                int number = ui.getUserInputInt();
                 ui.printString("");
                 member = members.getMemberFromNumber(number);
                 if (member == null) {
@@ -94,7 +94,7 @@ public class CoachDiscipline {
                     ui.printString("Medlem valgt:");
                     ui.print(member.toString());
                     ui.printString("\nAngiv ny tid:");
-                    float time = ui.scannerFloat();
+                    float time = ui.getUserInputFloat();
                     member.setBestTime(time);
                     ui.printString(member.toString());
                     members.updateMembers();

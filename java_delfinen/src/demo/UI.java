@@ -28,7 +28,7 @@ public class UI {
         }
     }
 
-    public int scannerInt() {
+    public int getUserInputInt() {
         int number;
         while (!scan.hasNextInt()) {
             System.out.println("Vælg et heltal");
@@ -39,7 +39,7 @@ public class UI {
         return number;
     }
 
-    public float scannerFloat() {
+    public float getUserInputFloat() {
         float number;
         while (!scan.hasNextFloat()) {
             scan.nextLine();

@@ -23,7 +23,7 @@ public class CoachTournament {
                 ui.printString("Tilføj et medlem til et stævne: ");
                 ui.print("\nAngiv medlemsnummer >>");
 
-                int number = ui.scannerInt();
+                int number = ui.getUserInputInt();
                 ui.printString("");
                 member = members.getMemberFromNumber(number);
                 if (member == null) {
@@ -50,19 +50,19 @@ public class CoachTournament {
         String name = ui.scannerString();
 
         ui.print("\nIndtast svømmerens placering: ");
-        int result = ui.scannerInt();
+        int result = ui.getUserInputInt();
 
         ui.print("\nIndtast tid: ");
-        float time = ui.scannerFloat();
+        float time = ui.getUserInputFloat();
 
         ui.print("\nIndtast dag: ");
-        int day = ui.scannerInt();
+        int day = ui.getUserInputInt();
 
         ui.print("\nIndtast måned: ");
-        int month = ui.scannerInt();
+        int month = ui.getUserInputInt();
 
         ui.print("\nIndtast år: ");
-        int year = ui.scannerInt();
+        int year = ui.getUserInputInt();
 
         LocalDate date = LocalDate.of(year, month, day);
 
