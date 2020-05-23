@@ -1,9 +1,9 @@
 /**
  * @author Patrick
  */
-package Program;
 
 import FileInteraction.MemberFileReader;
+import Program.Member;
 import UI.UI;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;

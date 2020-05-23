@@ -21,14 +21,11 @@ public class MemberFileReader {
     // BEHAVIOR METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
     public MemberFileReader() {
-
-        file = new File("Svømmeklub.txt");
+        file = new File("storage.txt");
     }
     public MemberFileReader(String UnitTest) {
-        /**
-         * Constructor for UnitTesting, pass any String
-         */
-        file = new File("Test/demo/Svømmeklub.txt");
+        /** Constructor for UnitTesting, pass any String */
+        file = new File("Test/storage.txt");
     }
 
     // -------------------------------------------------------------------------------------------------

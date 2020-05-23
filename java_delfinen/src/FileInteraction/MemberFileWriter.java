@@ -1,17 +1,17 @@
 /**
- * For adding new members or changes to current members
+ * For updating the storage file.
+ * When used, there is also generated a backup file that is deleted on completion.
+ * if an error occurs during file writing the backup will remain.
  *
  * @author Patrick
  */
 package FileInteraction;
 
 import Program.Member;
-
 import java.io.*;
 import java.util.ArrayList;
 
 public class MemberFileWriter {
-
     // -------------------------------------------------------------------------------------------------
     // FIELDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
@@ -23,41 +23,26 @@ public class MemberFileWriter {
     // -------------------------------------------------------------------------------------------------
     public MemberFileWriter() {
         bck = new File("backup.txt");
-        file = new File("Svømmeklub.txt");
+        file = new File("storage.txt");
     }
     public MemberFileWriter(String UnitTest) {
-        /**
-         * Constructor for UnitTesting, pass any String
-         */
-        bck = new File("Test/demo/backup.txt");
-        file = new File("Test/demo/Svømmeklub.txt");
+        /** Constructor for UnitTesting, pass any String */
+        bck = new File("Test/backup.txt");
+        file = new File("Test/storage.txt");
     }
 
     // -------------------------------------------------------------------------------------------------
     // BEHAVIOR METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // -------------------------------------------------------------------------------------------------
-    /*public void writeMember(Member member) {
+    private void backup() {
         try {
-            FileWriter fw = new FileWriter(file, true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            bw.newLine();
-            bw.write(member.toFile());
-            bw.flush();
-            bw.close();
-            fw.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }*/
-    public void updateMembers(ArrayList<Member> membersList) {
-        try {
-            // Copy to backup file
             InputStream is = null;
             OutputStream os = null;
             try {
                 is = new FileInputStream(file);
                 os = new FileOutputStream(bck);
                 byte[] buffer = new byte[4096];
+
                 int length;
                 while ((length = is.read(buffer)) > 0) {
                     os.write(buffer, 0, length);
@@ -66,18 +51,28 @@ public class MemberFileWriter {
                 is.close();
                 os.close();
             }
-            // Write new file
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateMembers(ArrayList<Member> membersList) {
+        try {
+            backup();
+
             FileWriter fw = new FileWriter(file);
             StringBuilder sb = new StringBuilder();
+
             for (Member member : membersList) {
                 sb.append(member.toFile()).append("\n");
-            }
+            } // END OF FOR-LOOP
+
             fw.write(sb.toString());
             fw.flush();
             fw.close();
 
-            // Delete backup file
             bck.delete();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

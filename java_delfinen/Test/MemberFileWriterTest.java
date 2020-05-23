@@ -1,10 +1,11 @@
 /**
  * @author Patrick
  */
-package Program;
 
 import FileInteraction.MemberFileReader;
 import FileInteraction.MemberFileWriter;
+import Program.Member;
+import Program.Tournament;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
